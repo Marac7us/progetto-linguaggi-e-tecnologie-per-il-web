@@ -47,10 +47,141 @@ body{
             border-radius: 5px;
             padding-bottom: 10px;
         }
+        * {
+  box-sizing: border-box;
+}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.row::after { /* crea una riga e un area per delimitare un banner*/ 
+  content: ""; 
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #bfb38b;
+  color: #ffffff;
+  padding: 15px;
+}
+
+
+.logo{
+
+padding-left: 1500px;
+margin-left: 100x;
+align-self: center;
+}
+
+.menu li:hover { /* cambia colore dell'oggetto selezionato al passaggio del mouse*/
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 50px;
+  margin-top: 150px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+  .header{width: 100%;}
+  .logo{width: 50%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .logo{width: 100%;}
+}
+
+.menu { 
+  overflow: hidden;
+  background-color: #2a1bac;
+}
+
+.menu a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menu a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.menu a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
 </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Progetto</h1>
+        <img class="logo" src="Immagini sito\Logo Sito.PNG">
+    </div>
+    
+    <div class="menu">
+    <a href="#home">home</a>
+    <a class="active" href="#catalogo">catalogo</a>
+    <a href="#chi siamo">chi siamo</a>
+    <a href="#accedi">accedi</a>
+    </div>
+
    <div class='container-fluid'>
         <div class="card mx-auto col-md-3 col-10 mt-5">
             <img class='mx-auto img-thumbnail'
@@ -60,7 +191,7 @@ body{
                 <div class='cvp'>
                     <h5 class="card-title font-weight-bold">Yail wrist watch</h5>
                     <p class="card-text">$299</p>
-                    <a href="#" class="btn details px-auto">view details</a><br />
+                    <a href="#" class="btn details px-auto">view details</a><br>
                     <a href="#" class="btn cart px-auto">ADD TO CART</a>
                 </div>
             </div>
@@ -77,7 +208,7 @@ body{
                 <div class='cvp'>
                     <h5 class="card-title font-weight-bold">Yail wrist watch</h5>
                     <p class="card-text">$299</p>
-                    <a href="#" class="btn details px-auto">view details</a><br />
+                    <a href="#" class="btn details px-auto">view details</a><br>
                     <a href="#" class="btn cart px-auto">ADD TO CART</a>
                 </div>
             </div>
