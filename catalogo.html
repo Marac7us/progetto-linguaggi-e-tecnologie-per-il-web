@@ -2,6 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 body{
     background:#E0E0E0;
@@ -62,7 +66,7 @@ img {vertical-align: middle;}
 [class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
   float: left;
   padding: 15px;
-}
+}/*Se COMMENTO QUESTO CSS LA PAGINA FUNZIONA IN MODO STRANO*/
 
 html {
   font-family: "Lucida Sans", sans-serif;
@@ -104,42 +108,15 @@ align-self: center;
   margin-top: 150px;
 }
 
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-}
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
-  .col-s-1 {width: 8.33%;}
-  .col-s-2 {width: 16.66%;}
-  .col-s-3 {width: 25%;}
-  .col-s-4 {width: 33.33%;}
-  .col-s-5 {width: 41.66%;}
-  .col-s-6 {width: 50%;}
-  .col-s-7 {width: 58.33%;}
-  .col-s-8 {width: 66.66%;}
-  .col-s-9 {width: 75%;}
-  .col-s-10 {width: 83.33%;}
-  .col-s-11 {width: 91.66%;}
-  .col-s-12 {width: 100%;}
   .header{width: 100%;}
   .logo{width: 50%;}
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
+
   .logo{width: 100%;}
 }
 
@@ -167,6 +144,30 @@ align-self: center;
   color: white;
 }
 
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+    
+
 </style>
 </head>
 <body>
@@ -182,39 +183,75 @@ align-self: center;
     <a href="#accedi">accedi</a>
     </div>
 
-   <div class='container-fluid'>
-        <div class="card mx-auto col-md-3 col-10 mt-5">
-            <img class='mx-auto img-thumbnail'
-                src="https://i.imgur.com/pjITBzX.jpg"
-                width="auto" height="auto"/>
-            <div class="card-body text-center mx-auto">
-                <div class='cvp'>
-                    <h5 class="card-title font-weight-bold">Yail wrist watch</h5>
-                    <p class="card-text">$299</p>
-                    <a href="#" class="btn details px-auto">view details</a><br>
-                    <a href="#" class="btn cart px-auto">ADD TO CART</a>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3 sidenav">
+          <h4>Menu di Ricerca</h4>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#section1">Tutti</a></li>
+            <li><a href="#section2">Filtro 1</a></li>
+            <li><a href="#section3">Filtro 2</a></li>
+            <li><a href="#section3">Filtro 3</a></li>
+          </ul><br>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Cerca prodotto...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+    
+        <div class="col-sm-9">
+          <h2>Catalogo</h2>
+          <hr>
+          <div class='container-fluid'>
+            <div class="card mx-auto col-md-3 col-10 mt-5">
+                <img class='mx-auto img-thumbnail'
+                    src="Immagini sito\32817.jpg"
+                    width="auto" height="auto"/>
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">Cucchiaio</h5>
+                        <p class="card-text">2$</p>
+                        <a href="#" class="btn details px-auto">view details</a><br>
+                        <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                    </div>
                 </div>
             </div>
+    
         </div>
-
-    </div>
-
-    <div class='container-fluid'>
-        <div class="card mx-auto col-md-3 col-10 mt-5">
-            <img class='mx-auto img-thumbnail'
-                src="https://i.imgur.com/pjITBzX.jpg"
-                width="auto" height="auto"/>
-            <div class="card-body text-center mx-auto">
-                <div class='cvp'>
-                    <h5 class="card-title font-weight-bold">Yail wrist watch</h5>
-                    <p class="card-text">$299</p>
-                    <a href="#" class="btn details px-auto">view details</a><br>
-                    <a href="#" class="btn cart px-auto">ADD TO CART</a>
+         
+          <br><br>
+          
+          
+          <hr>
+          <div class='container-fluid'>
+            <div class="card mx-auto col-md-3 col-10 mt-5">
+                <img class='mx-auto img-thumbnail'
+                    src="Immagini sito\cestino-vimini-naturale-600x600.png"
+                    width="auto" height="auto"/>
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">Cesto</h5>
+                        <p class="card-text">10$</p>
+                        <a href="#" class="btn details px-auto">view details</a><br>
+                        <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                    </div>
                 </div>
             </div>
+    
         </div>
-
-    </div>
+          
+          <hr>
+    
+          
+    
+          <div class="footer">
+            <p>CONTATTI</p>
+          </div>
+   
 
 </body>
 </html>
