@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css"/>
         <link rel="stylesheet" href="style.css"/>
+        <script src="../js/bootstrap.min.js"></script>
+
 
 
         <style>
@@ -13,18 +15,34 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 200px;
+          height: 300px;
+          width: 300px;
           border: 3px solid green; 
+          padding-bottom: 10px;
         }
         .cer {
+          position: relative;
+          vertical-align: middle;
           align-items: center;
+          padding: 10px;
+          width: auto;
+          height: auto;
+
+        }
+        .sfondo{
+          background-image: "Immagini sito\Logo Sito.PNG";
+        }
+        html{
+          background-image: url("Immagini sito\bin.jpg");
+             
         }
         </style>                                                                                                               
     </head>
     <body>
-        <h1 class="center">Accedi al servizio</h1>
         <form class="form-signin">
-        <input class="form-control" name="email" type="email" id="email">Inserisci la tua email </input>
+          <img src= "Immagini sito\Logo Sito.PNG" class="mb-4" width="300px" height="300px"/>
+          <input class="form-control" name="email" type="email" id="email">Inserisci la tua email </input>
+          <input class="form-control" name="password" type="password" id="pass">Inserisci la tua password </input>
         </form>
     </body>
 </html>
