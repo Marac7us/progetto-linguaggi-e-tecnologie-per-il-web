@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head class="sfondo">
         <title>Accedi</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -20,6 +20,11 @@
           border: 3px solid green; 
           padding-bottom: 10px;
         }
+        .footer {
+      background-color: rgb(219, 9, 9);
+      color: white;
+      padding: 15px;
+    }
         .cer {
           position: relative;
           vertical-align: middle;
@@ -30,24 +35,35 @@
 
         }
         .sfondo{
-          background-image: "Immagini sito\Logo Sito.PNG";
-        }
-        html{
-          background-image: url("Immagini sito\bin.jpg");
-             
+          background-image: url("Logo Sito.PNG");
         }
         </style>                                                                                                               
     </head>
-    <body>
+   
+    <body class="text-center">
         <form class="form-signin">
-          <img src= "Immagini sito\Logo Sito.PNG" class="mb-4" width="300px" height="300px"/>
-          <input class="form-control" name="inputemail" type="email" id="email">Inserisci la tua email </input>
-          <input class="form-control" name="inputpassword" type="password" id="pass" placeholder="password" required autofocus>Inserisci la tua password </input>
-          <input class="form-control" name="indirizzo" type="indirizzo" id="indirizzo">indirizzo </input>
-          <input class="form-control" name="password" type="password" id="pass">civico </input>
-          <input class="form-control" name="password" type="password" id="pass">cap</input>
-
-
+          <img src= "Logo Sito.PNG" class="mb-4" width="300px" height="300px"/>
+          <input class="form-control" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
+          <input class="form-control" name="email2" type="email" id="email2" placeholder="Ripeti Indirizzo Email" required autofocus ></input>
+          <input class="form-control" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
+          <input class="form-control" name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control" name="date" type="text" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
+          <input class="form-control" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
+          <input class="form-control" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
+          <input class="form-control" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
+          <label>Sesso</label>
+          <select name="Sesso">
+            <option value="null">Altro</option>
+            <option value="m">Maschio</option>
+            <option value="f">Femmina</option>
+          </select>
+          <button class="mb-2" type="submit" name="login">Registrati</button>
+          <button class="mb-2" type="reset" name="reset">Cancella</button>
+          <input class="form-control" name="collegato" type="checkbox" id="check">Resta collegato</input>
+          <div class="footer" weigth: auto>
+            <p>CONTATTI</p>
+          </div>
         </form>
+        
     </body>
 </html>
