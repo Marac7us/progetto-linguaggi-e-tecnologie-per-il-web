@@ -55,13 +55,12 @@ body{
   box-sizing: border-box;
 }
 .mySlides {display: none;}
-img {vertical-align: middle;}
+img {
+  width: 250px; 
+  height: 250px;
+  object-fit: cover;
+  vertical-align: middle;}
 
-.row::after { /* crea una riga e un area per delimitare un banner*/ 
-  content: ""; 
-  clear: both;
-  display: table;
-}
 
 [class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
   float: left;
@@ -80,24 +79,13 @@ html {
 
 
 .logo{
-
+width: auto;
+height: auto;
 padding-left: 1500px;
 margin-left: 100x;
 align-self: center;
 }
 
-.menu li:hover { /* cambia colore dell'oggetto selezionato al passaggio del mouse*/
-  background-color: #0099cc;
-}
-
-.aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
 
 .footer {
   background-color: #0099cc;
@@ -167,6 +155,12 @@ align-self: center;
         padding: 15px;
       }
     }
+  .cvp{
+    font-weight: bold;
+  }
+  h5{
+    font-weight: bolder;
+  }
     
 
 </style>
@@ -204,9 +198,95 @@ align-self: center;
           </div>
         </div>
     
-        <div class="col-sm-9">
+      <div class="col-sm-9">
           <h2>Catalogo</h2>
           <hr>
+
+      <div class="row">
+        <div class="col-sm">
+        <div class='container-fluid'>
+          <div class="card mx-auto col-md-3 col-10 mt-5">
+              <img class='mx-auto img-thumbnail'
+                  src="Immagini sito\32817.jpg"
+                  width="auto" height="auto"/>
+              <div class="card-body text-center mx-auto">
+                  <div class='cvp'>
+                      <h5 class="card-title font-weight-bold">Cucchiaio</h5>
+                      <p class="card-text">2$</p>
+                      <a href="#" class="btn details px-auto">view details</a><br>
+                      <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+  
+        </div>
+
+        <br><br>
+        <hr> 
+          
+          
+
+        <div class='container-fluid'>
+          <div class="card mx-auto col-md-3 col-10 mt-5">
+              <img class='mx-auto img-thumbnail'
+                  src="Immagini sito\32817.jpg"
+                  width="auto" height="auto"/>
+              <div class="card-body text-center mx-auto">
+                  <div class='cvp'>
+                      <h5 class="card-title font-weight-bold">Cucchiaio</h5>
+                      <p class="card-text">2$</p>
+                      <a href="#" class="btn details px-auto">view details</a><br>
+                      <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+  
+        </div>
+        </div>
+
+      <div class="col-sm">
+
+        <div class='container-fluid'>
+          <div class="card mx-auto col-md-3 col-10 mt-5">
+              <img class='mx-auto img-thumbnail'
+                  src="Immagini sito\cestino-vimini-naturale-600x600.png"
+                  width="auto" height="auto"/>
+              <div class="card-body text-center mx-auto">
+                  <div class='cvp'>
+                      <h5 class="card-title font-weight-bold">Cesto</h5>
+                      <p class="card-text">10$</p>
+                      <a href="#" class="btn details px-auto">view details</a><br>
+                      <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+  
+        </div>
+
+        <br><br>
+          <hr>
+
+        <div class='container-fluid'>
+          <div class="card mx-auto col-md-3 col-10 mt-5">
+              <img class='mx-auto img-thumbnail'
+                  src="Immagini sito\cestino-vimini-naturale-600x600.png"
+                  width="auto" height="auto"/>
+              <div class="card-body text-center mx-auto">
+                  <div class='cvp'>
+                      <h5 class="card-title font-weight-bold">Cesto</h5>
+                      <p class="card-text">10$</p>
+                      <a href="#" class="btn details px-auto">view details</a><br>
+                      <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                  </div>
+              </div>
+          </div>
+  
+        </div>
+
+        </div>
+
+        
+          <div class="col-sm">
           <div class='container-fluid'>
             <div class="card mx-auto col-md-3 col-10 mt-5">
                 <img class='mx-auto img-thumbnail'
@@ -222,12 +302,30 @@ align-self: center;
                 </div>
             </div>
     
-        </div>
-         
-          <br><br>
-          
-          
+          </div>
+
+          <br><br>  
           <hr>
+  
+          <div class='container-fluid'>
+            <div class="card mx-auto col-md-3 col-10 mt-5">
+                <img class='mx-auto img-thumbnail'
+                    src="Immagini sito\32817.jpg"
+                    width="auto" height="auto"/>
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">Cucchiaio</h5>
+                        <p class="card-text">2$</p>
+                        <a href="#" class="btn details px-auto">view details</a><br>
+                        <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+    
+          </div>
+          </div>
+        <div class="col-sm">
+  
           <div class='container-fluid'>
             <div class="card mx-auto col-md-3 col-10 mt-5">
                 <img class='mx-auto img-thumbnail'
@@ -243,7 +341,31 @@ align-self: center;
                 </div>
             </div>
     
-        </div>
+          </div>
+
+          <br><br>
+           <hr>
+  
+          <div class='container-fluid'>
+            <div class="card mx-auto col-md-3 col-10 mt-5">
+                <img class='mx-auto img-thumbnail'
+                    src="Immagini sito\cestino-vimini-naturale-600x600.png"
+                    width="auto" height="auto"/>
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">Cesto</h5>
+                        <p class="card-text">10$</p>
+                        <a href="#" class="btn details px-auto">view details</a><br>
+                        <a href="#" class="btn cart px-auto">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+    
+          </div>
+  
+          </div>     
+          
+      </div>
           
           <hr>
     
