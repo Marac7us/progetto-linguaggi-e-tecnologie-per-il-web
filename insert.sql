@@ -1,0 +1,1 @@
+insert into prodotto(idprodotto, immagine, nome, quantita, prezzo, tags, idutente) values(1, pg_read_file('C:/Users/cucc.jpg')::bytea, 'cucchiaio', 10, 5, 'cucina', 3);
