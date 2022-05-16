@@ -9,8 +9,8 @@
 .mySlides {display: none;}
 .slide {
   vertical-align: middle;
-  width: 1025px; 
-  height: 350px;
+  width: 1024px; 
+  height: 520px;
 }
 
 .row::after { /* crea una riga e un area per delimitare un banner*/ 
@@ -111,33 +111,20 @@
   color: white;
 }
 
-/*.slide{
-
-  padding-top: 10px;
-  margin-top: 25px;
-  width: 1800px;
-  height: 600px;
-}*/
 
 .logo{
 
 padding-left: 1500px;
 margin-left: 100x;
 align-self: center;
+position: static;
+display: flex;
 }
 
 .menu li:hover { /* cambia colore dell'oggetto selezionato al passaggio del mouse*/
   background-color: #0099cc;
 }
 
-.aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
 
 .footer {
   background-color: #0099cc;
@@ -145,7 +132,7 @@ align-self: center;
   text-align: center;
   font-size: 12px;
   padding-top: 50px;
-  margin-top: 150px;
+  margin-top: 10px;
 }
 
 /* For mobile phones: */
@@ -187,13 +174,31 @@ align-self: center;
   .logo{width: 100%;}
 }
 
+.column {
+  float: left;
+  width: 70.00%;
+  padding: 15px;
+}
+.column2 {
+  float: left;
+  width: 15.00%;
+  padding: 15px;
+  height: 1080px;
+  margin-top: 10px;
+  background-image: url("2959582.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 
 </style>
 </head>
 <body>
 <div class="header">
-    <h1>Progetto</h1>
-    <img class="logo" src="Immagini sito\Logo Sito.PNG">
+  <h1></h1>
+    <img class="logo" src="Immagini sito\trialbio finito.png">
 </div>
 
 <div class="menu">
@@ -204,41 +209,54 @@ align-self: center;
 <a href="registrazione/index.html">registrati</a>
 </div>
 
-<div class="row"></div>
-<div class="slideshow-container">
+<div class="row">
+  <div class="column2">
+  </div>
 
- <div class="mySlides fade">
-   <img class="slide" src="Immagini sito\green.png">
- </div>
 
- <div class="mySlides fade">
-   <img class="slide" src="Immagini sito\News-Story-IFL-1.jpg" style="width: 100%">
- </div>
+  <div class="column">
+   <div class="slideshow-container">
 
- <div class="mySlides fade">
-   <img class="slide" src="Immagini sito\ecofriendly.jpg" style="width: 100%">
- </div>
+    <div class="mySlides fade">
+     <img class="slide" src="Immagini sito\green.png">
+    </div>
 
-</div>
-<br>
+    <div class="mySlides fade">
+     <img class="slide" src="Immagini sito\News-Story-IFL-1.jpg" style="width: 100%">
+    </div>
 
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
+    <div class="mySlides fade">
+     <img class="slide" src="Immagini sito\ecofriendly.jpg" style="width: 100%">
+    </div>
 
-<div class="col-6 col-s-9">
-    <h1>Cosa facciamo</h1>
-    <p> Piccola realtà bio </p>
+   </div>
+
+
+   <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+   </div>
+
+
+   <div class="col-6 col-s-9">
+     <h1>Cosa facciamo</h1>
+     <p> Piccola realtà bio </p>
+    
+   </div>
+  </div>
+
+
+
+  <div class="column2">
   </div>
 </div>
-<br><br>
 
 
 <div class="footer">
   <p>CONTATTI</p>
 </div>
+
 
 <script>
   let slideIndex = 0;
@@ -258,7 +276,7 @@ align-self: center;
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
   }
   </script>
   
