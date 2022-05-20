@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head class="sfondo">
-        <title>Accedi</title>
+        <title>Registrati</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css"/>
@@ -42,11 +42,11 @@
    
     <body class="text-center">
         <form class="form-signin">
-          <img src= "Logo Sito.PNG" class="mb-4" width="300px" height="300px"/>
+          <img src= "..\Immagini sito\trialbio finito.png" class="mb-4" width="300px" height="300px"/>
           <input class="form-control" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
           <input class="form-control" name="email2" type="email" id="email2" placeholder="Ripeti Indirizzo Email" required autofocus ></input>
           <input class="form-control" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
-          <input class="form-control" name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
           <input class="form-control" name="date" type="text" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
           <input class="form-control" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
           <input class="form-control" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
@@ -57,6 +57,17 @@
             <option value="m">Maschio</option>
             <option value="f">Femmina</option>
           </select>
+         <script>
+           var email = document.getElementById("email")
+           var email2 = document.getElementById("email2")
+           var pass = document.getElementById("pass")
+           var pass2 = document.getElementById("pass2")
+            if ((email != email2) && (pass != pass2)){
+             alert("Email e Password non corrispondono")
+            }else{
+             alert("Email o password non corrispondono")
+           }
+          </script>
           <button class="mb-2" type="submit" name="register">Registrati</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button>
           <input class="form-control" name="collegato" type="checkbox" id="check">Resta collegato</input>

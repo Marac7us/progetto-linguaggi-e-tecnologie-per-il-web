@@ -1,6 +1,6 @@
 <?php
 if (!(isset($_POST['register']))) {
-    header("Location: /");
+    header("Location: ../registrazione/index.html");
 }
 else {
     $dbconn = pg_connect("host=localhost port=5433 dbname=credenziali 
