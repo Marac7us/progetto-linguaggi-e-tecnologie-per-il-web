@@ -58,19 +58,15 @@
             <option value="f">Femmina</option>
           </select>
          <script>
-           var email = document.getElementById("email")
-           var email2 = document.getElementById("email2")
-           var pass = document.getElementById("pass")
-           var pass2 = document.getElementById("pass2")
-            if ((email != email2) && (pass != pass2)){
+            if (document.getElementById("email") != document.getElementById("email") && document.getElementById("pass") != document.getElementById("pass")){
              alert("Email e Password non corrispondono")
-            }else{
+            }else if (document.getElementById("email") != document.getElementById("email") || document.getElementById("pass") != document.getElementById("pass")) {
              alert("Email o password non corrispondono")
            }
           </script>
           <button class="mb-2" type="submit" name="register">Registrati</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button>
-          <input class="form-control" name="collegato" type="checkbox" id="check">Resta collegato</input>
+          <input class="form-control" name="collegato" type="checkbox" id="ricordami">Resta collegato</input>
           <div class="footer" weigth: auto>
             <p>CONTATTI</p>
           </div>
