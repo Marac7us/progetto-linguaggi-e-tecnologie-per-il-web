@@ -25,7 +25,7 @@ else {
                     $nome = $_POST['nome'];
                     $cognome = $_POST['cognome'];
                     $cap = $_POST['cap'];
-                    $password = md5($_POST['password']);
+                    $password = md5($_POST['pass']);
                     $q2 = "insert into utente values ($1,$2,$3,$4,$5)";
                     $data = pg_query_params($dbconn, $q2,
                         array($email, $nome, $cognome, $password, $cap));
