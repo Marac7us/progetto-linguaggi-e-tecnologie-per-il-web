@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../Immagini sito/green.png" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="../Immagini sito/trialbio finito.png"
+  />
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="nav.css" />
+  <title>Home</title>
 <style>
 *{
   box-sizing: border-box;
@@ -28,27 +39,12 @@
   font-family: "Lucida Sans", sans-serif;
 }
 
-.header {
-  background-color: #cccccc;
-  color:#ddd;
-  height: 520px;
-  padding: 15px;
-  background-image: url("Why-are-eco-friendly-houses-trending.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
-
-
-
 
 /* The dots/bullets/indicators */
 .dot {
@@ -60,11 +56,9 @@
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
-.active {
+.attiva {
   background-color: #717171;
 }
-
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -79,55 +73,6 @@
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
-}
-
-
-.menu { 
-  overflow: hidden;
-  background-color: #2a1bac;
-}
-
-.menu a{
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.menu a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.menu a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-
-.logo{
-
-padding-left: 1500px;
-margin-left: 100x;
-align-self: center;
-position: static;
-display: flex;
-}
-
-.menu li:hover { /* cambia colore dell'oggetto selezionato al passaggio del mouse*/
-  background-color: #0099cc;
-}
-
-
-.footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding-top: 50px;
-  margin-top: 10px;
 }
 
 /* For mobile phones: */
@@ -192,19 +137,83 @@ display: flex;
 </style>
 </head>
 <body>
-<div class="header">
-  <h1></h1>
-    <img class="logo" src="Immagini sito\trialbio finito.png">
-</div>
-
-<div class="menu">
-<a class="active" href="#home">home</a>
-<a href="catalogo.html">catalogo</a>
-<a href="#chi siamo">chi siamo/lavora con noi</a>
-<a href="login/accedi.html">accedi</a>
-<a href="registrazione/index.html">registrati</a>
-</div>
-
+  <nav
+  class="navbar sticky-top navbar-expand-sm navbar-dark bg-success"
+  href="../css/bootstrap.min.css"
+>
+  <div class="container-fluid">
+    <a href="/home.html" class="navbar-brand">
+      <img
+        class="d-inline-block align-text-top rounded"
+        src="../Immagini sito/trialbio finito.png"
+        alt=""
+        width="80"
+        height="80"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-sm-end"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a
+            class="nav-link active"
+            href="../home/home.html"
+          >
+            Home
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            href="../carrello.html"
+          >
+            Catalogo
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../dove siamo/doveSiamo.html">
+            Dove Siamo
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../contattaci.html">
+            Contattaci
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a
+            id="accedi/reg"
+            class="nav-link"
+            href="../login/accedi.html"
+          >
+            Accedi
+          </a>
+          <li class="nav-item active">
+            <a
+              id="accedi/reg"
+              class="nav-link"
+              href="../registrazione/index.html"
+            >
+              Registrati
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="row">
   <div class="column2">
   </div>
@@ -214,15 +223,15 @@ display: flex;
    <div class="slideshow-container">
 
     <div class="mySlides fade">
-     <img class="slide" src="Immagini sito\green.png">
+     <img class="slide" src="../Immagini sito/green.png">
     </div>
 
     <div class="mySlides fade">
-     <img class="slide" src="Immagini sito\News-Story-IFL-1.jpg" style="width: 100%">
+     <img class="slide" src="../Immagini sito/News-Story-IFL-1.jpg" style="width: 100%">
     </div>
 
     <div class="mySlides fade">
-     <img class="slide" src="Immagini sito\ecofriendly.jpg" style="width: 100%">
+     <img class="slide" src="../Immagini sito/ecofriendly.jpg" style="width: 100%">
     </div>
 
    </div>
@@ -271,13 +280,13 @@ display: flex;
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i].className.replace(" attiva", "");
     }
     slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 2 seconds
+    dots[slideIndex-1].className += " attiva";
+    setTimeout(showSlides, 1500); // Change image every 2 seconds
   }
   </script>
-  
+  <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
