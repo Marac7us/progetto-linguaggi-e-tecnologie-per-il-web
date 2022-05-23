@@ -1,9 +1,10 @@
 body {
-  padding: 0;
-  background-image: url(/ltw_proj-master/img/sfondi/Wallpaper_3840x2160_board_black_line_texture_background_wood_4K.jpg);
+  padding: 2px;
+  background-image: url("sfondo\ natura.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-size: 2000px;
 }
 
 .Photo_container {
