@@ -43,26 +43,27 @@
     <body class="text-center">
         <form class="form-signin">
           <img src= "..\Immagini sito\trialbio finito.png" class="mb-4" width="300px" height="300px"/>
-          <input class="form-control" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
-          <input class="form-control" name="email2" type="email" id="email2" placeholder="Ripeti Indirizzo Email" required autofocus ></input>
-          <input class="form-control" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
-          <input class="form-control"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
-          <input class="form-control" name="date" type="text" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
-          <input class="form-control" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
-          <input class="form-control" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
-          <input class="form-control" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
+          <input class="form-control" methode= "post" name="nickname" type="text" id="nick" placeholder="Nickname" required autofocus ></input>
+          <input class="form-control" methode= "post" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
+          <input class="form-control" methode= "post" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
+          <input class="form-control" methode= "post"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control" methode= "post" name="date" type="text" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
+          <input class="form-control" methode= "post" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
+          <input class="form-control" methode= "post" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
+          <input class="form-control" methode= "post" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
           <label>Sesso</label>
-          <select name="Sesso">
+          <select name="Sesso" methode= "post">
             <option value="null">Altro</option>
             <option value="m">Maschio</option>
             <option value="f">Femmina</option>
           </select>
          <script>
-            if (document.getElementById("email") != document.getElementById("email") && document.getElementById("pass") != document.getElementById("pass")){
-             alert("Email e Password non corrispondono")
-            }else if (document.getElementById("email") != document.getElementById("email") || document.getElementById("pass") != document.getElementById("pass")) {
-             alert("Email o password non corrispondono")
-           }
+           var a = document.getElementsByName('password');
+           var b = document.getElementsByName('password2');
+            if (a != b){
+             alert("Le password non corrispondono");
+             }
+           a = b;
           </script>
           <button class="mb-2" type="submit" name="register">Registrati</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button>
