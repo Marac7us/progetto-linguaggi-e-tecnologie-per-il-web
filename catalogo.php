@@ -55,7 +55,7 @@ body{
   box-sizing: border-box;
 }
 .mySlides {display: none;}
-img {
+.catimg {
   width: 250px !important; 
   height: 250px !important;
   object-fit: cover;
@@ -85,11 +85,9 @@ html {
 
 
 .logo{
-width: auto;
-height: auto;
 padding-left: 1500px;
-margin-left: 100x;
 align-self: center;
+position: static;
 }
 
 
@@ -184,7 +182,9 @@ align-self: center;
 <body>
     <div class="header">
       <h1></h1>
-        <img class="logo" src="Immagini sito\trialbio finito.png">
+      <?php
+        echo '<img class="logo" src="Immagini sito\trialbio finito.png">';
+      ?>
     </div>
     
     <div class="menu">
@@ -238,10 +238,10 @@ align-self: center;
            while($row= mysqli_fetch_array($retval)){
             
             if($count%4==0) echo "<div class='row'>";
-            echo "<div class='column'>";
+            echo "<div class='column col-sm'>";
              echo"  <div class='container-fluid'>
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
-                        <img class='mx-auto img-thumbnail' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
+                        <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
                            <div class='cvp'>
                             <h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
