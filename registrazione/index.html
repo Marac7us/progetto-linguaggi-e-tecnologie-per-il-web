@@ -6,71 +6,72 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css"/>
         <link rel="stylesheet" href="style.css"/>
-        <script src="../js/bootstrap.min.js"></script>
-
-
-
-        <style>
-        .center {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 300px;
-          width: 300px;
-          border: 3px solid green; 
-          padding-bottom: 10px;
-        }
-        .footer {
-      background-color: rgb(219, 9, 9);
-      color: white;
-      padding: 15px;
-    }
-        .cer {
-          position: relative;
-          vertical-align: middle;
-          align-items: center;
-          padding: 10px;
-          width: auto;
-          height: auto;
-
-        }
-        .sfondo{
-          background-image: url("Logo Sito.PNG");
-        }
-        </style>                                                                                                               
+        <link rel="stylesheet" href="../home/nav.css"/>
+        <script src="../js/bootstrap.min.js"></script>                                                                                                             
     </head>
    
-    <body class="text-center">
+    <body class="text-center" >
         <form class="form-signin">
           <img src= "..\Immagini sito\trialbio finito.png" class="mb-4" width="300px" height="300px"/>
-          <input class="form-control" methode= "post" name="nickname" type="text" id="nick" placeholder="Nickname" required autofocus ></input>
-          <input class="form-control" methode= "post" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
-          <input class="form-control" methode= "post" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
-          <input class="form-control" methode= "post"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
-          <input class="form-control" methode= "post" name="date" type="text" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
-          <input class="form-control" methode= "post" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
-          <input class="form-control" methode= "post" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
-          <input class="form-control" methode= "post" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
-          <label>Sesso</label>
-          <select name="Sesso" methode= "post">
-            <option value="null">Altro</option>
-            <option value="m">Maschio</option>
-            <option value="f">Femmina</option>
-          </select>
+          <input class="form-control"  methode= "post" name="nickname" type="text" id="nick" placeholder="Nickname" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
+          <input class="form-control"  methode= "post"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control"  methode= "post" name="date" type="date" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
+          <input class="form-control"  methode= "post" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
          <script>
-           var a = document.getElementsByName('password');
-           var b = document.getElementsByName('password2');
-            if (a != b){
-             alert("Le password non corrispondono");
-             }
-           a = b;
+              function controllo(){
+                var pass = document.getElementById('pass').value;
+                var pass2 = document.getElementById('pass2').value;
+                if(pass != pass2){
+                  alert('Le password non coincidono');
+                }
+                if(document.getElementById('nick').value == ''){
+                  alert('Inserire Nickname');
+                }
+                if(document.getElementById('date').value == ''){
+                  alert('Inserire la data di nascita');
+                }
+                if(document.getElementById('Indirizzo').value == ''){
+                  alert('Inserire indirizzo');
+                }
+                if(document.getElementById('civico').value == ''){
+                  alert('Inserire civico');
+                }
+                if(document.getElementById('cap').value == ''){
+                  alert('Inserire il cap');
+                }
+              }
           </script>
-          <button class="mb-2" type="submit" name="register">Registrati</button>
+          <button class="mb-2" type="submit" onclick="controllo()" name="register">Registrati</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button>
-          <input class="form-control" name="collegato" type="checkbox" id="ricordami">Resta collegato</input>
-          <div class="footer" weigth: auto>
-            <p>CONTATTI</p>
-          </div>
+          <input class="form-control" name="collegato" type="checkbox" id="ricordami"><strong>Resta collegato</strong></input>
+          <footer
+      class="bg-success text-black text-center"
+      style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
+    >
+      <div
+        class="container p-4"
+        style="position: relative; bottom: 0; right: 0; left: 0"
+      >
+        <div class="row">
+          <div class="col">
+            <div class="Informazioni_label text-uppercase">
+              <strong>Informazioni</strong>
+            </div>
+            <div>
+              Viale dello Scalo di San Lorenzo, 82, 00159 ROMA (RM)
+            </div>
+            <div>P.IVA 33333333333
+              <span>Cap. Sociale 10000,00$</span>
+            </div>
+            <div>06 33333333</div>
+            <div> Emanuele Napoli 1852442  Luca Gennarelli 1919725</div>
+          </div>          
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
         </form>
         
     </body>
