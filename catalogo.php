@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link
+    rel="icon"
+    type="image/x-icon"
+    href="../Immagini sito/trialbio finito.png"
+  />
+  <link rel="stylesheet" href="home\nav.css" />
 <style>
 body{
     background:#E0E0E0;
@@ -176,33 +182,106 @@ position: static;
 .cont{
   height: 50px;
 }
+.filter{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 </style>
 </head>
 <body>
-    <div class="header">
-      <h1></h1>
-      <?php
-        echo '<img class="logo" src="Immagini sito\trialbio finito.png">';
-      ?>
+ <nav
+  class="navbar sticky-top navbar-expand-sm navbar-dark bg-success">
+  <div class="container-fluid">
+    <a href="/home.html" class="navbar-brand">
+      <img
+        class="d-inline-block align-text-top rounded"
+        src="../Immagini sito/trialbio finito.png"
+        alt=""
+        width="80"
+        height="80"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-sm-end"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a
+            class="nav-link active"
+            href="../home/home.html"
+          >
+            Home
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            href="../catalogo.php"
+          >
+            Catalogo
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../dove siamo/doveSiamo.html">
+            Dove Siamo
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../contattaci.html">
+            Contattaci
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a
+            id="accedi/reg"
+            class="nav-link"
+            href="../login/accedi.html"
+          >
+            Accedi
+          </a>
+          <li class="nav-item active">
+            <a
+              id="accedi/reg"
+              class="nav-link"
+              href="../registrazione/index.html"
+            >
+              Registrati
+            </a>
+        </li>
+      </ul>
     </div>
-    
-    <div class="menu">
-    <a href="home.html">home</a>
-    <a class="active" href="#catalogo">catalogo</a>
-    <a href="#chi siamo">chi siamo</a>
-    <a href="#accedi">accedi</a>
-    </div>
+  </div>
+</nav>
 
     <div class="container-fluid">
       <div class="row content">
         <div class="col-sm-3 sidenav">
           <h4>Menu di Ricerca</h4>
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#section1">Tutti</a></li>
-            <li><a href="#section2">Cucina</a></li>
-            <li><a href="#section3">Cura Personale</a></li>
-            <li><a href="#section3">Makeup</a></li>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="filtri">
+             <li class="active"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
+             <li><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
+             <li><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
+             <li><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
+            </form>
           </ul><br>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Cerca prodotto...">
@@ -228,6 +307,8 @@ position: static;
           $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
           
           $sql= 'SELECT * FROM prodotto';
+          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'";
+          if(isset($_POST['curapersabtn'])) $sql .= " where tags='cura personale'";
           $retval = mysqli_query($conn, $sql);
           
           if(! $retval ) {
@@ -257,17 +338,34 @@ position: static;
             $count=$count+1;
             
              
-          }
-         
-
-
-
-
-          ?>
-      
-
-
-
+          }?>
+  </div>
+  <footer
+class="bg-success text-white text-center"
+style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
+>
+<div
+  class="container p-4"
+  style="position: relative; bottom: 0; right: 0; left: 0"
+>
+  <div class="row">
+    <div class="col">
+      <div class="Informazioni_label text-uppercase">
+        <strong>Informazioni</strong>
       </div>
+      <div>
+        Viale dello Scalo di San Lorenzo, 82, 00159 ROMA (RM)
+      </div>
+      <div>P.IVA 33333333333
+        <span>Cap. Sociale 10000,00$</span>
+      </div>
+      <div>06 33333333</div>
+      <div> Emanuele Napoli 1852442  Luca Gennarelli 1919725</div>
+    </div>          
+</footer>
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    
            
         
