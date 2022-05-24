@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link
@@ -11,7 +10,8 @@
     type="image/x-icon"
     href="../Immagini sito/trialbio finito.png"
   />
-  <link rel="stylesheet" href="home\nav.css" />
+  <link rel="stylesheet" href="../home/nav.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
 <style>
 body{
     background:#E0E0E0;
@@ -198,7 +198,7 @@ position: static;
  <nav
   class="navbar sticky-top navbar-expand-sm navbar-dark bg-success">
   <div class="container-fluid">
-    <a href="/home.html" class="navbar-brand">
+    <a href="../home/home.html" class="navbar-brand">
       <img
         class="d-inline-block align-text-top rounded"
         src="../Immagini sito/trialbio finito.png"
