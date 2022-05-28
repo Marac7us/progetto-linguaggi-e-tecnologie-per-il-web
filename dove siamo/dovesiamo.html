@@ -5,97 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../Immagini sito/green.png" />
+    <script src="js\jquery-3.6.0.min.js"></script>
+    <script src="js\bootstrap.min.js"></script>
     <link
-      rel="icon"
-      type="image/x-icon"
-      href="../Immagini sito/trialbio finito.png"
+    rel="icon"
+    type="image/x-icon"
+    href="../Immagini sito/trialbio finito.png"
     />
-    <link
-      rel="stylesheet"
-      href="../css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="dove_siamo.css" />
     <title>Dove Siamo</title>
   </head>
+  <style>
+    .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 20px;
+  }
+  .navbar-brand {
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  }
+  .Map_container {
+    text-align: center;
+    padding-top: 60px;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+ }
+
+  </style>
 
   <body>
-    <nav
-      class="navbar sticky-top navbar-expand-sm navbar-dark bg-success"
-      href="../bootstrap.min.css"
-    >
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-        <a href="../home/home.html" class="navbar-brand">
-          <img
-            class="d-inline-block align-text-top rounded"
-            src="../Immagini sito/trialbio finito.png"
-            alt=""
-            width="60"
-            height="60"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-sm-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a
-                class="nav-link active"
-                href="../home/home.html"
-              >
-                Home
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a
-                class="nav-link"
-                href="../carrello.html"
-              >
-                Catalogo
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../dove siamo/doveSiamo.html">
-                Dove Siamo
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../contattaci.html">
-                Contattaci
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a
-                id="accedi/reg"
-                class="nav-link"
-                href="../login/accedi.html"
-              >
-                Accedi
-              </a>
-              <li class="nav-item active">
-                <a
-                  id="accedi/reg"
-                  class="nav-link"
-                  href="../registrazione/index.html"
-                >
-                  Registrati
-                </a>
-            </li>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a href="../home/home.html">
+              <img
+                class="d-inline-block align-text-top rounded navbar-brand"
+                src="../Immagini sito/trialbio finito.png"
+                alt=""
+                width="80"
+                height="80"
+              />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="home\home.html">Home</a></li>
+            <li><a href="catalogo.php">Catalogo</a></li>
+            <li class="active"><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+            <li><a href="#">Page 4</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
           </ul>
         </div>
       </div>
-    </nav>
+      </nav>
+
     <div
       class="text-black"
       style="font-size: 30px; font-family: cursive; text-align: center; padding-top:10px;"

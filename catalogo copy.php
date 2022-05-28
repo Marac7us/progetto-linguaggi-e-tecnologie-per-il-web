@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
+<?php
+session_start();
+?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js\jquery-3.6.0.min.js"></script>
+<script src="js\bootstrap.min.js"></script>
+<link
+    rel="icon"
+    type="image/x-icon"
+    href="../Immagini sito/trialbio finito.png"
+  />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
 body{
     background:#E0E0E0;
@@ -55,7 +63,7 @@ body{
   box-sizing: border-box;
 }
 .mySlides {display: none;}
-img {
+.catimg {
   width: 250px !important; 
   height: 250px !important;
   object-fit: cover;
@@ -71,72 +79,15 @@ html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-.header {
-  background-color: #cccccc;
-  color:#ddd;
-  height: 520px;
-  padding: 15px;
-  background-image: url("Why-are-eco-friendly-houses-trending.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-
-.logo{
-width: auto;
-height: auto;
-padding-left: 1500px;
-margin-left: 100x;
-align-self: center;
-}
-
-
-.footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding-top: 50px;
-  margin-top: 150px;
-}
-
-
 @media only screen and (min-width: 600px) {
   /* For tablets: */
-  .header{width: 100%;}
-  .logo{width: 50%;}
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
 
-  .logo{width: 100%;}
 }
 
-.menu { 
-  overflow: hidden;
-  background-color: #2a1bac;
-}
 
-.menu a{
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.menu a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.menu a.active {
-  background-color: #04AA6D;
-  color: white;
-}
 
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {height: 1500px}
@@ -147,18 +98,15 @@ align-self: center;
       height: 100%;
     }
     
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
         padding: 15px;
+      }
+      .column{
+        width:100%;
+        height: 50%;
       }
     }
   .cvp{
@@ -178,31 +126,84 @@ align-self: center;
 .cont{
   height: 50px;
 }
+.filter{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 20px;
+  }
+  .navbar-brand {
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.nav2 {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 50px;
+  }
 
 </style>
 </head>
 <body>
-    <div class="header">
-      <h1></h1>
-        <img class="logo" src="Immagini sito\trialbio finito.png">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="../home/home.html">
+          <img
+            class="d-inline-block align-text-top rounded navbar-brand"
+            src="../Immagini sito/trialbio finito.png"
+            alt=""
+            width="80"
+            height="80"
+          />
+        </a>
     </div>
-    
-    <div class="menu">
-    <a href="home.html">home</a>
-    <a class="active" href="#catalogo">catalogo</a>
-    <a href="#chi siamo">chi siamo</a>
-    <a href="#accedi">accedi</a>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home\home.html">Home</a></li>
+        <li class="active"><a href="catalogo.php">Catalogo</a></li>
+        <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+        <li><a href="#">Page 4</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+      </ul>
     </div>
+  </div>
+  </nav>
 
     <div class="container-fluid">
       <div class="row content">
         <div class="col-sm-3 sidenav">
           <h4>Menu di Ricerca</h4>
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#section1">Tutti</a></li>
-            <li><a href="#section2">Cucina</a></li>
-            <li><a href="#section3">Cura Personale</a></li>
-            <li><a href="#section3">Makeup</a></li>
+          <ul class="nav nav-pills nav-stacked nav2">
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="filtri">
+             <li class="active"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
+             <li><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
+             <li><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
+             <li><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
+            </form>
           </ul><br>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Cerca prodotto...">
@@ -215,10 +216,13 @@ align-self: center;
         </div>
     
       <div class="col-sm-9">
+          <br><br>
+          <br><br>
           <h2>Catalogo</h2>
           <hr>
 
           <?php
+          
           $dbhost ="localhost:3306";
           $dbuser = "user";
           $dbpass= "admin";
@@ -228,6 +232,9 @@ align-self: center;
           $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
           
           $sql= 'SELECT * FROM prodotto';
+          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'";
+          if(isset($_POST['curapersabtn'])) $sql .= " where tags='cura personale'";
+          if(isset($_POST['makeupbtn'])) $sql .= " where tags='makeup'";
           $retval = mysqli_query($conn, $sql);
           
           if(! $retval ) {
@@ -238,10 +245,10 @@ align-self: center;
            while($row= mysqli_fetch_array($retval)){
             
             if($count%4==0) echo "<div class='row'>";
-            echo "<div class='column'>";
+            echo "<div class='column col-sm'>";
              echo"  <div class='container-fluid'>
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
-                        <img class='mx-auto img-thumbnail' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
+                        <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
                            <div class='cvp'>
                             <h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
@@ -257,17 +264,11 @@ align-self: center;
             $count=$count+1;
             
              
-          }
-         
-
-
-
-
-          ?>
-      
-
-
-
-      </div>
+          }?>
+  </div>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    
            
         
