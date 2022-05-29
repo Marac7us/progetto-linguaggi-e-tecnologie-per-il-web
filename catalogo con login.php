@@ -1,8 +1,46 @@
+<?php
+function console_log( $data ){   echo '<script>';   echo 'console.log('. json_encode( $data ) .')';   echo '</script>'; }
+session_start();
+include('db.php');
+$status="";
+if (isset($_POST['idprodotto']) && $_POST['idprodotto']!=""){
+$idprodotto = $_POST['idprodotto'];
+$result = mysqli_query($con,"SELECT * FROM `prodotto` WHERE `idprodotto`='$idprodotto'");
+$row = mysqli_fetch_assoc($result);
+$nome = $row['nome'];
+$idprodotto = $row['idprodotto'];
+$prezzo = $row['prezzo'];
+$immagine = $row['immmagine'];
+
+$cartArray = array(
+	$idprodotto=>array(
+	'nome'=>$nome,
+	'idprodotto'=>$idprodotto,
+	'prezzo'=>$prezzo,
+	'quantita'=>1,
+	'immagine'=>$immagine)
+);
+if(empty($_SESSION["shopping_cart"])) {
+	$_SESSION["shopping_cart"] = $cartArray;
+	$status = "<div class='box'>Product is added to your cart!</div>";
+}else{
+	$array_keys = array_keys($_SESSION["shopping_cart"]);
+	if(in_array($idprodotto,$array_keys)) {
+		$status = "<div class='box' style='color:red;'>
+		Product is already added to your cart!</div>";	
+	} else {
+	$_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"],$cartArray);
+	$status = "<div class='box'>Product is added to your cart!</div>";
+	}
+
+	}
+	console_log($_SESSION);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
-<?php
-session_start();
-?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -183,7 +221,16 @@ html {
         <li><a href="home\home.html">Home</a></li>
         <li class="active"><a href="catalogo.php">Catalogo</a></li>
         <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
-        <li><a href="#">Page 4</a></li>
+        <li><?php
+          if(!empty($_SESSION["shopping_cart"])) {
+          $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+          ?>
+          <div class="cart_div">
+          <a href="cart.php"><img src="cart-icon.png" />Cart<span><?php echo $cart_count; ?></span></a>
+          </div>
+          <?php
+          }?></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
@@ -250,11 +297,14 @@ html {
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
                         <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
-                           <div class='cvp'>
-                            <h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
+                           <div class='cvp'>";
+                      echo "<form method='post'  action=''>
+                            <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
+                      echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
                             <a href='#' class='btn details px-auto'>view details</a><br>
-                            <a href='#' class='btn cart px-auto'>ADD TO CART</a>
+                            <button href='#' type='submit' class='btn cart px-auto buy' value='buy'>ADD TO CART</button>
+                            </form>
                            </div>
                         </div>
                       </div>

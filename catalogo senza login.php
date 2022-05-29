@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-session_start();
-?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -183,7 +180,6 @@ html {
         <li><a href="home\home.html">Home</a></li>
         <li class="active"><a href="catalogo.php">Catalogo</a></li>
         <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
-        <li><a href="#">Page 4</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
@@ -219,6 +215,14 @@ html {
           <br><br>
           <br><br>
           <h2>Catalogo</h2>
+          <div class="message_box" style="margin:10px 0px;">
+            <?php $status='';
+            if(isset($_POST['addbtn'])){
+            $status = "<div class='box alert alert-danger alert-dismissible fade in' style='color:red;'>
+		                       devi essere loggato per aggiungere un prodotto!</div>";
+          }
+            echo $status; ?>
+          </div>
           <hr>
 
           <?php
@@ -235,6 +239,7 @@ html {
           if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'";
           if(isset($_POST['curapersabtn'])) $sql .= " where tags='cura personale'";
           if(isset($_POST['makeupbtn'])) $sql .= " where tags='makeup'";
+          
           $retval = mysqli_query($conn, $sql);
           
           if(! $retval ) {
@@ -250,11 +255,14 @@ html {
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
                         <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
-                           <div class='cvp'>
-                            <h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
+                           <div class='cvp'>";
+                      echo "<form method='post'  action=''>
+                            <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
+                      echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
                             <a href='#' class='btn details px-auto'>view details</a><br>
-                            <a href='#' class='btn cart px-auto'>ADD TO CART</a>
+                            <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn'>ADD TO CART</button>
+                            </form>
                            </div>
                         </div>
                       </div>
