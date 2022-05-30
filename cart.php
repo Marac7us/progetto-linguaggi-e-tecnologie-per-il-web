@@ -64,6 +64,11 @@ if (isset($_POST['action']) && $_POST['action']=="buy"){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	body{
+		background-image: url("Abstract Floral Green Background Vector Illustration.png");
+	}
+</style>
 <body>
 <div style="width:700px; margin:50 auto;">
 
@@ -100,7 +105,9 @@ if(isset($_SESSION["shopping_cart"])){
 foreach ($_SESSION["shopping_cart"] as $prodotto){
 ?>
 <tr>
-<td><img src='<?php echo $prodotto["image"]; ?>' width="50" height="40" /></td>
+<?php
+echo "<td><img src=' data:image/jpg;base64,".base64_encode($prodotto['immagine'])."' width='50' height='40' /></td>"
+?>
 <td><?php echo $prodotto["nome"]; ?><br />
 
 </td>
@@ -159,6 +166,7 @@ $total_prezzo += ($prodotto["prezzo"]*$prodotto["quantita"]);
 <input type='hidden' name='action' value="buy" />
 <button type='submit' class='buy'>Completa acquisto</button>
 </form>
+<a href="catalogo con login.php"><button>Torna al Catalogo</button></a>
 </div>
 </div>
 </body>

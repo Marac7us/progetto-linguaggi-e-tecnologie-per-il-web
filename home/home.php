@@ -1,0 +1,297 @@
+<?php 
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../Immagini sito/green.png" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="../Immagini sito/trialbio finito.png"
+  />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Home</title>
+<style>
+*{
+  box-sizing: border-box;
+}
+.mySlides {display: none;}
+.slide {
+  vertical-align: middle;
+  width: 1024px; 
+  height: 520px;
+}
+
+.row::after { /* crea una riga e un area per delimitare un banner*/ 
+  content: ""; 
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+  float: left;
+  padding: 15px;
+}
+
+ html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.attiva {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+  .header{width: 100%;}
+  .txt{width: 50%;}
+  .column2{width: 100%;
+          height: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .txt{width: 100%;}
+  .column2{width: 100%;
+          height: 100%;}
+}
+
+.column {
+  float: left;
+  width: 70.00%;
+  padding: 15px;
+  margin-top: 80px;
+  text-align: left;
+  
+}
+.column2 {
+  float: left;
+  width: 15.00%;
+  padding: 15px;
+  height: 1080px;
+  margin-top: 10px;
+  background-image: url("2959582.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-top: 20px;
+  }
+  .navbar-brand {
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.txt{
+  
+  text-align: left;
+  font-size: 20px;
+}
+
+
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(26, 114, 26)">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a href="../home/home.html">
+            <img
+              class="d-inline-block align-text-top rounded navbar-brand"
+              src="../Immagini sito/trialbio finito.png"
+              alt=""
+              width="80"
+              height="80"
+            />
+          </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home\home.php">Home</a></li>
+          <li><a href="catalogo senza login.php">Catalogo</a></li>
+          <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="registrazione\registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+        <li><a href="login\accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+
+        </ul>
+      </div>
+    </div>
+    </nav>
+<div class="row">
+  <div class="column2">
+  </div>
+
+
+  <div class="column">
+   <div class="slideshow-container">
+
+    <div class="mySlides fade">
+     <img class="slide" src="../Immagini sito/green.png">
+    </div>
+
+    <div class="mySlides fade">
+     <img class="slide" src="../Immagini sito/News-Story-IFL-1.jpg" style="width: 100%">
+    </div>
+
+    <div class="mySlides fade">
+     <img class="slide" src="../Immagini sito/ecofriendly.jpg" style="width: 100%">
+    </div>
+
+   </div>
+
+
+   <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+   </div>
+
+
+   <div class="col-6 col-s-9 txt">
+     <h1>Cosa facciamo</h1>
+     <p> Nata oltre 20 anni fa, nel 2006 prende l’attuale nome di TrialBio, seleziona e distribuisce prodotti di vario tipo che rispettino completamente il nostro pianeta.
+         Certificata secondo lo standard ISO 9001:2015, questa azienda ha iniziato a rifornire la ristorazione collettiva e le piu grandi catene di supermercati dalla fine degli anni 90 ed essendo tra le pochissime aziende specializzata nel biologivo, è stata una delle prime nel Lazio, ha fornire questo tipologia di prodotto, sin dai primi inserimenti del biologico nelle scuole ed è oggi una delle realtà leader nel settore, raggiungendo ben 80.000 studenti distribuiti in tutta la regione. Uno dei suoi clienti principali è il Comune di Roma, che risulta essere il maggiore “consumatore” europeo di prodotti biologici, presenti in percentuali decisamente elevate nei menu delle mense scolastiche della capitale.
+         TrialBio, appartiene al Gruppo Sapiente Spa di Roma, azienda storica nel settore dei prodotti biologici, che a sua volta è inserita nel Gruppo Agrintesa/Apo Conerpo, leader nel settore della produzione di "plastica" biodegradabile.
+         Questa appartenenza, dà l’opportunità a TrialBio, di poter contare per i suoi approvvigionamenti, non solo sui propri produttori ma anche su quelli di entrambi i gruppi. </p>
+    
+   </div>
+  </div>
+
+
+
+  <div class="column2">
+  </div>
+</div>
+
+
+<footer
+class="bg-success text-white text-center"
+style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
+>
+<div
+  class="container p-4"
+  style="position: relative; bottom: 0; right: 0; left: 0"
+>
+  <div class="row">
+    <div class="col">
+      <div class="Informazioni_label text-uppercase">
+        <strong>Informazioni</strong>
+      </div>
+      <div>
+        Viale dello Scalo di San Lorenzo, 82, 00159 ROMA (RM)
+      </div>
+      <div>P.IVA 33333333333
+        <span>Cap. Sociale 10000,00$</span>
+      </div>
+      <div>06 33333333</div>
+      <div> Emanuele Napoli 1852442  Luca Gennarelli 1919725</div>
+    </div>          
+</footer>
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" attiva", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " attiva";
+    setTimeout(showSlides, 1500); // Change image every 2 seconds
+  }
+  </script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

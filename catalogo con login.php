@@ -194,11 +194,14 @@ html {
   list-style: none;
   padding-top: 50px;
   }
+  .iconac{
+    padding-top: 10px;
+  }
 
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(26, 114, 26)">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -218,23 +221,22 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="home\home.html">Home</a></li>
-        <li class="active"><a href="catalogo.php">Catalogo</a></li>
+        <li><a href="home\home.php">Home</a></li>
+        <li class="active"><a href="catalogo con login.php">Catalogo</a></li>
         <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
         <li><?php
           if(!empty($_SESSION["shopping_cart"])) {
           $cart_count = count(array_keys($_SESSION["shopping_cart"]));
           ?>
           <div class="cart_div">
-          <a href="cart.php"><img src="cart-icon.png" />Cart<span><?php echo $cart_count; ?></span></a>
+          <a href="cart.php"><img class="iconac" src="cart-icon.png"> <span><?php echo $cart_count; ?></span></a>
           </div>
           <?php
           }?></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>

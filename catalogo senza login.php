@@ -1,3 +1,5 @@
+<?php 
+include('db.php');?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,7 +159,7 @@ html {
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(26, 114, 26)">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -177,13 +179,13 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="home\home.html">Home</a></li>
+        <li><a href="home\home.php">Home</a></li>
         <li class="active"><a href="catalogo.php">Catalogo</a></li>
         <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="registrazione\registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+        <li><a href="login\accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
       </ul>
     </div>
   </div>
@@ -236,7 +238,7 @@ html {
           $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
           
           $sql= 'SELECT * FROM prodotto';
-          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'";
+          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'"; 
           if(isset($_POST['curapersabtn'])) $sql .= " where tags='cura personale'";
           if(isset($_POST['makeupbtn'])) $sql .= " where tags='makeup'";
           
@@ -260,7 +262,6 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
-                            <a href='#' class='btn details px-auto'>view details</a><br>
                             <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn'>ADD TO CART</button>
                             </form>
                            </div>

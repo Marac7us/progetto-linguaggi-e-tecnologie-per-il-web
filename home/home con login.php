@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +100,9 @@
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
   .header{width: 100%;}
-  .logo{width: 50%;}
+  .txt{width: 50%;}
+  .column2{width: 100%;
+          height: 100%;}
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -113,7 +118,9 @@
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
-  .logo{width: 100%;}
+  .txt{width: 100%;}
+  .column2{width: 100%;
+          height: 100%;}
 }
 
 .column {
@@ -121,7 +128,8 @@
   width: 70.00%;
   padding: 15px;
   margin-top: 80px;
-  text-align: center;
+  text-align: left;
+  
 }
 .column2 {
   float: left;
@@ -149,13 +157,17 @@
   font-size: 18px;
   line-height: 20px;
 }
-
+.txt{
+  
+  text-align: left;
+  font-size: 20px;
+}
 
 
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(26, 114, 26)">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -175,14 +187,13 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="home\home.html">Home</a></li>
-          <li><a href="catalogo.php">Catalogo</a></li>
+          <li class="active"><a href="home\home.php">Home</a></li>
+          <li><a href="catalogo senza login.php">Catalogo</a></li>
           <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
-          <li><a href="#">Page 4</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="home\home.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
         </ul>
       </div>
     </div>
@@ -217,7 +228,7 @@
    </div>
 
 
-   <div class="col-6 col-s-9">
+   <div class="col-6 col-s-9 txt">
      <h1>Cosa facciamo</h1>
      <p> Nata oltre 20 anni fa, nel 2006 prende l’attuale nome di TrialBio, seleziona e distribuisce prodotti di vario tipo che rispettino completamente il nostro pianeta.
          Certificata secondo lo standard ISO 9001:2015, questa azienda ha iniziato a rifornire la ristorazione collettiva e le piu grandi catene di supermercati dalla fine degli anni 90 ed essendo tra le pochissime aziende specializzata nel biologivo, è stata una delle prime nel Lazio, ha fornire questo tipologia di prodotto, sin dai primi inserimenti del biologico nelle scuole ed è oggi una delle realtà leader nel settore, raggiungendo ben 80.000 studenti distribuiti in tutta la regione. Uno dei suoi clienti principali è il Comune di Roma, che risulta essere il maggiore “consumatore” europeo di prodotti biologici, presenti in percentuali decisamente elevate nei menu delle mense scolastiche della capitale.
