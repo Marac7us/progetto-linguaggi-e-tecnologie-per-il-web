@@ -25,10 +25,13 @@ if($password != $password2){
     echo('Esiste già una registrazione con questa email ');
     echo('<a href=registrazione.html> Clicca qui per riprovare </a>');
     } else {
-        $query= "INSERT INTO utenti (email, password, nome, cognome, cap, indirizzo, civico) VALUES ('$email','$password', '$nome','$cognome','$cap','$indirizzo','$civico')";
+        $password = md5($password);
+        $query= "INSERT INTO utenti (email, password, nome, cognome, username, cap, indirizzo, civico) VALUES ('$email','$password', '$nome','$cognome', '$username','$cap','$indirizzo','$civico')";
         $mysqli->query($query) or die( "Unable to query");
         echo "registrazione effettuata";
 }
+echo "<hr><a href='../login/accedi.html'> <button> vai alla pagina di accesso </button></a>";
+
 
 $mysqli->close();
 }
