@@ -11,41 +11,18 @@
     </head>
    
     <body class="text-center" >
-        <form class="form-signin">
+        <form class="form-signin" method="post"  action="../registrazione/registrazione.php">
           <img src= "..\Immagini sito\trialbio finito.png" class="mb-4" width="300px" height="300px"/>
-          <input class="form-control"  methode= "post" name="nickname" type="text" id="nick" placeholder="Nickname" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="nome" type="text" id="nome" placeholder="Nome" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="cognome" type="text" id="cognome" placeholder="Cognome" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="username" type="text" id="username" placeholder="username" required autofocus ></input>
           <input class="form-control"  methode= "post" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
-          <input class="form-control"  methode= "post" name="password" type="password" id="pass" placeholder="Password" required autofocus></input>
-          <input class="form-control"  methode= "post"name="password2" type="password" id="pass2" placeholder="Ripeti password" required autofocus></input>
-          <input class="form-control"  methode= "post" name="date" type="date" id="date" placeholder="Data di nascita dd/mm/yyyy" required autofocus ></input>
-          <input class="form-control"  methode= "post" name="Indirizzo" type="text" id="Indirizzo" placeholder="Indirizzo" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="password" type="password" id="password" placeholder="Password" required autofocus></input>
+          <input class="form-control"  methode= "post"name="password2" type="password" id="password2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control"  methode= "post" name="indirizzo" type="text" id="indirizzo" placeholder="Indirizzo" required autofocus ></input>
           <input class="form-control"  methode= "post" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
           <input class="form-control"  methode= "post" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
-         <script>
-              function controllo(){
-                var pass = document.getElementById('pass').value;
-                var pass2 = document.getElementById('pass2').value;
-                if(pass != pass2){
-                  alert('Le password non coincidono');
-                }
-                if(document.getElementById('nick').value == ''){
-                  alert('Inserire Nickname');
-                }
-                if(document.getElementById('date').value == ''){
-                  alert('Inserire la data di nascita');
-                }
-                if(document.getElementById('Indirizzo').value == ''){
-                  alert('Inserire indirizzo');
-                }
-                if(document.getElementById('civico').value == ''){
-                  alert('Inserire civico');
-                }
-                if(document.getElementById('cap').value == ''){
-                  alert('Inserire il cap');
-                }
-              }
-          </script>
-          <button class="mb-2" type="submit" onclick="controllo()" name="register">Registrati</button>
+          <button class="mb-2" type="submit"  name="register">Registrati</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button>
           <input class="form-control" name="collegato" type="checkbox" id="ricordami"><strong>Resta collegato</strong></input>
           <footer
