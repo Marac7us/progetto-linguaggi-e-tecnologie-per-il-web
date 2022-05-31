@@ -22,7 +22,7 @@ if($num >= 1){
     $result2 = $mysqli->query($query2) or die( "Unable to query");
     $num2 = mysqli_num_rows($result2);
     $logdb = mysqli_fetch_row($result2);
-    $numero =count($logdb);
+    $numero =current($logdb);
     $sicurezza2 = current($logdb);
     if($password != $password2){
         echo "Le password non coincidono.<hr>";
