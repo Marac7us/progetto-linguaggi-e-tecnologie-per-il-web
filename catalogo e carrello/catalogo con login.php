@@ -1,5 +1,47 @@
-<?php 
-include('db.php');?>
+<?php
+function console_log( $data ){   echo '<script>';   echo 'console.log('. json_encode( $data ) .')';   echo '</script>'; }
+session_start();
+include('db.php');
+$status="";
+if (isset($_POST['idprodotto']) && $_POST['idprodotto']!=""){
+$idprodotto = $_POST['idprodotto'];
+$result = mysqli_query($con,"SELECT * FROM `prodotto` WHERE `idprodotto`='$idprodotto'");
+$row = mysqli_fetch_assoc($result);
+$nome = $row['nome'];
+$idprodotto = $row['idprodotto'];
+$prezzo = $row['prezzo'];
+$immagine = $row['immmagine'];
+$qt=$row['quantita'];
+
+$cartArray = array(
+	$idprodotto=>array(
+	'nome'=>$nome,
+	'idprodotto'=>$idprodotto,
+	'prezzo'=>$prezzo,
+	'quantita'=>1,
+  'qt'=>$qt,
+	'immagine'=>$immagine)
+);
+if(empty($_SESSION["shopping_cart"])) {
+	$_SESSION["shopping_cart"] = $cartArray;
+	$status = "<div class='box'>Product is added to your cart!</div>";
+}else{
+	$array_keys = array_keys($_SESSION["shopping_cart"]);
+	if(in_array($idprodotto,$array_keys)) {
+		$status = "<div class='box' style='color:red;'>
+		Product is already added to your cart!</div>";	
+	} else {
+	$_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"],$cartArray);
+	$status = "<div class='box'>Product is added to your cart!</div>";
+	}
+
+	}
+	console_log($_SESSION);
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +56,6 @@ include('db.php');?>
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-
 .details {
             border: 1.5px solid grey;
             color: #d6bb36;
@@ -67,25 +108,25 @@ include('db.php');?>
   vertical-align: middle;}
 
 
-[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+[class*="col-"] {
   float: left;
   padding: 15px;
-}/*Se COMMENTO QUESTO CSS LA PAGINA FUNZIONA IN MODO STRANO*/
+}
 
 html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
 .row.content {height: 1500px}
     
-    /* Set gray background color and 100% height */
+   
     .sidenav {
       background-color: #f1f1f1;
       height: 100%;
     }
     
-    /* On small screens, set height to 'auto' for sidenav and grid */
+   
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
@@ -147,6 +188,9 @@ html {
   list-style: none;
   padding-top: 50px;
   }
+  .iconac{
+    padding-top: 10px;
+  }
 
 </style>
 </head>
@@ -159,7 +203,7 @@ html {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="../home/home.html">
+      <a href="../home/home con login.html">
           <img
             class="d-inline-block align-text-top rounded navbar-brand"
             src="../Immagini sito/trialbio finito.png"
@@ -171,13 +215,22 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="../home/home.html">Home</a></li>
-        <li class="active"><a href="../catalogo.php">Catalogo</a></li>
-        <li><a href="../dove siamo/dovesiamo.html">Dove trovarci</a></li>
+        <li><a href="../home/home con login.html">Home</a></li>
+        <li class="active"><a href="../catalogo con login.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo con login.html">Dove trovarci</a></li>
+        <li><?php
+          if(!empty($_SESSION["shopping_cart"])) {
+          $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+          ?>
+          <div class="cart_div">
+          <a href="cart.php"><img class="iconac" src="cart-icon.png"> <span><?php echo $cart_count; ?></span></a>
+          </div>
+          <?php
+          }?></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../registrazione/registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-        <li><a href="../login/accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="../catalogo e carrello/logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>
@@ -189,14 +242,14 @@ html {
           <h4>Menu di Ricerca</h4>
           <ul class="nav nav-pills nav-stacked nav2">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="filtri">
-             <li class="active"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
-             <li><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
-             <li><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
-             <li><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
             </form>
           </ul><br>
           <div class="input-group">
-            <span class="input-group-btn">
+              
             </span>
           </div>
         </div>
@@ -205,14 +258,6 @@ html {
           <br><br>
           <br><br>
           <h2>Catalogo</h2>
-          <div class="message_box" style="margin:10px 0px;">
-            <?php $status='';
-            if(isset($_POST['addbtn'])){
-            $status = "<div class='box alert alert-danger alert-dismissible fade in' style='color:red;'>
-		                       Per aggiungere un prodotto devi prima effettuare il login!</div>";
-          }
-            echo $status; ?>
-          </div>
           <hr>
 
           <?php
@@ -226,10 +271,9 @@ html {
           $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
           
           $sql= 'SELECT * FROM prodotto';
-          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'"; 
+          if(isset($_POST['cucinabtn'])) $sql .= " where tags='cucina'";
           if(isset($_POST['curapersabtn'])) $sql .= " where tags='cura personale'";
           if(isset($_POST['makeupbtn'])) $sql .= " where tags='makeup'";
-          
           $retval = mysqli_query($conn, $sql);
           
           if(! $retval ) {
@@ -251,7 +295,7 @@ html {
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
                             <p class='card-text'>quantità: ".$row['quantita']."</p>
-                            <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn' value='buy'"?><?php if ($row['quantita'] == 0){ ?> <?php echo "disabled";   } ?><?php echo ">ADD TO CART</button>
+                            <button href='#' type='submit' class='btn cart px-auto buy' value='buy'"?><?php if ($row['quantita'] == 0){ ?> <?php echo "disabled";   } ?><?php echo ">ADD TO CART</button>
                             </form>
                            </div>
                         </div>
@@ -264,29 +308,7 @@ html {
              
           }?>
   </div>
- <footer
-class="bg-success text-white text-center"
-style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
->
-<div
-  class="container p-4"
-  style="position: relative; bottom: 0; right: 0; left: 0"
->
-  <div class="row">
-    <div class="col">
-      <div class="Informazioni_label text-uppercase">
-        <strong>Informazioni</strong>
-      </div>
-      <div>
-        Viale dello Scalo di San Lorenzo, 82, 00159 ROMA (RM)
-      </div>
-      <div>P.IVA 33333333333
-        <span>Cap. Sociale 10000,00$</span>
-      </div>
-      <div>06 33333333</div>
-      <div> Emanuele Napoli 1852442  Luca Gennarelli 1919725</div>
-    </div>          
-</footer>
+  
   <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
