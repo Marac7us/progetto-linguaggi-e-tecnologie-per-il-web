@@ -39,9 +39,12 @@ if($password != $password2){
         echo "<hr><a href='../login/accedi.html'> <button> vai alla pagina di accesso </button></a>";
 }
 
-
 $mysqli->close();
 }
+
+
+
+
 
 
    
