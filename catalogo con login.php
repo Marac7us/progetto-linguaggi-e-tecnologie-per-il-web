@@ -209,7 +209,7 @@ html {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="../home/home.html">
+      <a href="../home/home con login.php">
           <img
             class="d-inline-block align-text-top rounded navbar-brand"
             src="../Immagini sito/trialbio finito.png"
@@ -221,9 +221,9 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="home\home.php">Home</a></li>
-        <li class="active"><a href="catalogo con login.php">Catalogo</a></li>
-        <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+        <li class="active"><a href="../home/home con login.php">Home</a></li>
+        <li><a href="../catalogo con login.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo con login.php">Dove trovarci</a></li>
         <li><?php
           if(!empty($_SESSION["shopping_cart"])) {
           $cart_count = count(array_keys($_SESSION["shopping_cart"]));
@@ -236,7 +236,7 @@ html {
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="../home/home.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>
@@ -304,7 +304,6 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
-                            <a href='#' class='btn details px-auto'>view details</a><br>
                             <button href='#' type='submit' class='btn cart px-auto buy' value='buy'>ADD TO CART</button>
                             </form>
                            </div>

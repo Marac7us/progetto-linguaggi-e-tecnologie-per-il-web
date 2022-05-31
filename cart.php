@@ -1,8 +1,4 @@
 <?php
-/*
-Author: Javed Ur Rehman
-Website: https://www.allphptricks.com
-*/
 function console_log( $data ){   echo '<script>';   echo 'console.log('. json_encode( $data ) .')';   echo '</script>'; }
 session_start();
 $status="";
@@ -25,7 +21,7 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
   foreach($_SESSION["shopping_cart"] as &$value){
     if($value['idprodotto'] == $_POST["idprodotto"]){
         $value['quantita'] = $_POST["quantita"];
-        break; // Stop the loop after we've found the prodotto
+        break; 
     }
 }
   	
@@ -50,7 +46,7 @@ if (isset($_POST['action']) && $_POST['action']=="buy"){
 	  foreach($_SESSION["shopping_cart"] as &$value){
 		if($value['idprodotto'] == $_POST["idprodotto"]){
 			$value['quantita'] = $_POST["quantita"];
-			break; // Stop the loop after we've found the prodotto
+			break; 
 		}
 	}
 		  

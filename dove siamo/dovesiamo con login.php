@@ -50,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a href="../home/home.html">
+          <a href="../home/home con login.php">
               <img
                 class="d-inline-block align-text-top rounded navbar-brand"
                 src="../Immagini sito/trialbio finito.png"
@@ -62,12 +62,12 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="home\home.php">Home</a></li>
-            <li><a href="catalogo senza login.php">Catalogo</a></li>
-            <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+          <li class="active"><a href="../home/home.php">Home</a></li>
+          <li><a href="../catalogo con login.php">Catalogo</a></li>
+          <li><a href="../dove siamo/dovesiamo con login.php">Dove trovarci</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login\accedi.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            <li><a href="../home/home.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
           </ul>
         </div>
       </div>
@@ -92,6 +92,12 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
     <footer
       class="bg-success text-white text-center"
       style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"

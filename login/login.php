@@ -6,6 +6,7 @@ $password = $_POST['password'];
 $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $db) or die( "Unable to connect");
 $mysqli->select_db($db) or die( "Unable to select database");
 mysqli_set_charset($mysqli,"utf8");
+$password = md5($password);
 $query="SELECT username FROM utenti WHERE email = '$email' AND password = '$password'";
 $result = $mysqli->query($query) or die( "Unable to query");
 $num = mysqli_num_rows($result);
@@ -21,5 +22,6 @@ echo 'email o password non validi';
     echo "Benvenuto", $username;
     echo "<a href='../home/home con login.php'> <button> vai alla home </button></a>";
 }
+echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
 
 
