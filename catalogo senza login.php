@@ -179,13 +179,13 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="home\home.php">Home</a></li>
-        <li class="active"><a href="catalogo.php">Catalogo</a></li>
-        <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+        <li><a href="../home/home.html">Home</a></li>
+        <li class="active"><a href="../catalogo.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo.html">Dove trovarci</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="registrazione\registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-        <li><a href="login\accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="../registrazione/registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+        <li><a href="../login/accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
       </ul>
     </div>
   </div>
@@ -262,6 +262,7 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
+                            <p class='card-text'>quantità: ".$row['quantita']."</p>
                             <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn'>ADD TO CART</button>
                             </form>
                            </div>

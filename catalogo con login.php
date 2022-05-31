@@ -11,6 +11,7 @@ $nome = $row['nome'];
 $idprodotto = $row['idprodotto'];
 $prezzo = $row['prezzo'];
 $immagine = $row['immmagine'];
+$qt=$row['quantita'];
 
 $cartArray = array(
 	$idprodotto=>array(
@@ -18,6 +19,7 @@ $cartArray = array(
 	'idprodotto'=>$idprodotto,
 	'prezzo'=>$prezzo,
 	'quantita'=>1,
+  'qt'=>$qt,
 	'immagine'=>$immagine)
 );
 if(empty($_SESSION["shopping_cart"])) {
@@ -209,7 +211,7 @@ html {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="../home/home con login.php">
+      <a href="../home/home con login.html">
           <img
             class="d-inline-block align-text-top rounded navbar-brand"
             src="../Immagini sito/trialbio finito.png"
@@ -221,9 +223,9 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../home/home con login.php">Home</a></li>
-        <li><a href="../catalogo con login.php">Catalogo</a></li>
-        <li><a href="../dove siamo/dovesiamo con login.php">Dove trovarci</a></li>
+        <li><a href="../home/home con login.html">Home</a></li>
+        <li class="active"><a href="../catalogo con login.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo con login.html">Dove trovarci</a></li>
         <li><?php
           if(!empty($_SESSION["shopping_cart"])) {
           $cart_count = count(array_keys($_SESSION["shopping_cart"]));
@@ -236,7 +238,7 @@ html {
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../home/home.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="../home/home.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>
@@ -248,10 +250,10 @@ html {
           <h4>Menu di Ricerca</h4>
           <ul class="nav nav-pills nav-stacked nav2">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="filtri">
-             <li class="active"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
-             <li><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
-             <li><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
-             <li><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
             </form>
           </ul><br>
           <div class="input-group">
@@ -304,6 +306,7 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
+                            <p class='card-text'>quantità: ".$row['quantita']."</p>
                             <button href='#' type='submit' class='btn cart px-auto buy' value='buy'>ADD TO CART</button>
                             </form>
                            </div>

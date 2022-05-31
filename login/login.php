@@ -20,7 +20,6 @@ echo 'email o password non validi';
 } else {
     setcookie("username", $username);
     echo "Benvenuto", $username;
-    echo "<a href='../home/home con login.php'> <button> vai alla home </button></a>";
 }
 echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
 

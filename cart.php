@@ -122,6 +122,7 @@ echo "<td><img src=' data:image/jpg;base64,".base64_encode($prodotto['immagine']
 </td>
 <td><?php echo "$".$prodotto["prezzo"]; ?></td>
 <td><?php echo "$".$prodotto["prezzo"]*$prodotto["quantita"]; ?></td>
+<td><?php echo "quantità rimanente:" .$prodotto["qt"];?></td>
 </tr>
 <?php
 $total_prezzo += ($prodotto["prezzo"]*$prodotto["quantita"]);
