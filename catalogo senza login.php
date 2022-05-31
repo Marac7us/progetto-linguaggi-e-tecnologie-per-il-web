@@ -14,9 +14,7 @@ include('db.php');?>
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-body{
-    background:#E0E0E0;
-}
+
 .details {
             border: 1.5px solid grey;
             color: #d6bb36;

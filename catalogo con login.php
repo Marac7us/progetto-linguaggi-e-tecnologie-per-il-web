@@ -39,6 +39,7 @@ if(empty($_SESSION["shopping_cart"])) {
 	console_log($_SESSION);
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -229,7 +230,7 @@ html {
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../home/home.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>

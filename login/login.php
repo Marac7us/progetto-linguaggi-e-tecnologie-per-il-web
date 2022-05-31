@@ -19,7 +19,7 @@ $erroreNonEsiste = "1";
 echo 'email o password non validi'; 
 } else {
     setcookie("username", $username);
-    echo "Benvenuto", $username;
+    echo "Benvenuto!";
 }
 echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
 
