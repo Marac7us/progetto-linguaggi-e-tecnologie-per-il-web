@@ -26,7 +26,7 @@ if($password != $password2){
     if ($num > 0) {
     $erroreMailUsata = "1";
     echo('Esiste già una registrazione con questa email ');
-    echo('<a href=registrazione.html> Clicca qui per riprovare </a>');
+    echo('<a href=registrazione.html> Clicca qui per riprovare </a><br>');
     }if ($num2 > 0) {
         $erroreMailUsata2 = "1";
         echo('Esiste già una registrazione con questo username ');
