@@ -224,7 +224,7 @@ html {
           $cart_count = count(array_keys($_SESSION["shopping_cart"]));
           ?>
           <div class="cart_div">
-          <a href="cart.php"><img class="iconac" src="cart-icon.png"> <span><?php echo $cart_count; ?></span></a>
+          <a href="cart.php" style="color: rgb(0, 0, 0);"><img class="iconac" src="cart-icon.png"> <span><?php echo $cart_count; ?></span></a>
           </div>
           <?php
           }?></li>
