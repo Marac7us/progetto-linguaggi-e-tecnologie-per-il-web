@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accedi</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="../js/bootstrap.min.js"></script>
+
+
+
+        <style>
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 300px;
+          width: 300px;
+          border: 3px solid green; 
+          padding-bottom: 10px;
+        }
+        .footer {
+      background-color: rgb(219, 9, 9);
+      color: white;
+      padding: 15px;
+    }
+        .cer {
+          position: relative;
+          vertical-align: middle;
+          align-items: center;
+          padding: 10px;
+          width: auto;
+          height: auto;
+
+        }
+        .sfondo{
+          background-image: url("../login/bin.jpg ");
+        }
+      body {
+       padding: 0px;
+       background-image: url("../dove siamo/sfondo natura.jpg");
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center center;
+       background-size: 2000px;
+      }
+
+
+    </style>                                                                                                               
+    </head>
+   
+    <body class="text-center" class="sfondo">
+      
+        <form class="form-signin" action="recupero.php" method="post">
+          <a href="../home/home.html">
+            <img
+              class="mb-4"
+              src="../Immagini sito/trialbio finito.png"
+              alt=""
+              width="300"
+              height="300"
+            />
+          </a>
+          <input class="form-control" method = "post" name="username" type="text" id="username" placeholder="Username" required autofocus >
+          <input class="form-control" method = "post" name="email" type="text" id="email" placeholder="Indirizzo Email" required autofocus ></input><hr>
+          <button class="mb-2" type="submit" name="recupero">Invia</button>
+          <button class="mb-2" type="reset" name="reset">Cancella</button><hr>
+          <a href="../registrazione/registrazione.html">Sei nuovo su Trialbio? Registrati!</a><hr>
+          <footer
+      class="bg-success text-black text-center"
+      style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
+    >
+      <div
+        class="container p-4"
+        style="position: relative; bottom: 0; right: 0; left: 0"
+      >
+        <div class="row">
+          <div class="col">
+            <div class="Informazioni_label text-uppercase">
+              <strong>Informazioni</strong>
+            </div>
+            <div>
+              Viale dello Scalo di San Lorenzo, 82, 00159 ROMA (RM)
+            </div>
+            <div>P.IVA 33333333333
+              <span>Cap. Sociale 10000,00$</span>
+            </div>
+            <div>06 33333333</div>
+            <div> Emanuele Napoli 1852442  Luca Gennarelli 1919725</div>       
+    </footer>
+
+          </div>
+        </form>
+  
+        
+</body>
+</html>
