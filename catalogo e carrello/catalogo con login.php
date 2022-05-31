@@ -249,10 +249,15 @@ html {
              <li class="attf"><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
             </form>
           </ul><br>
-          <div class="input-group">
-              
+          <div class="input-group" style='opacity:0.0;'>
+            <input type="text" class="form-control" placeholder="Cerca prodotto..." dysplay=none>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" dysplay=none>
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
             </span>
           </div>
+          
         </div>
     
       <div class="col-sm-9">
