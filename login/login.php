@@ -11,15 +11,18 @@ $query="SELECT username FROM utenti WHERE email = '$email' AND password = '$pass
 $result = $mysqli->query($query) or die( "Unable to query");
 $num = mysqli_num_rows($result);
 $logdb = mysqli_fetch_row($result);
-$mysqli->close();
-$username = "SELECT username FROM utenti WHERE email = '$email' AND password = '$password'";
 
 if ($num < 1) {
 $erroreNonEsiste = "1";
 echo 'email o password non validi'; 
 } else {
-    setcookie("username", $username);
-    echo "Benvenuto!";
+    $username = "SELECT username FROM utenti WHERE email = '$email' AND password = '$password'";
+    $result2 = $mysqli->query($username) or die( "Unable to query");
+    $num2 = mysqli_num_rows($result2);
+    $logdb = mysqli_fetch_row($result2);
+    $numero =current($logdb);
+    $mysqli->close();
+    echo "Benvenuto  ", $numero;
 }
 echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
 
