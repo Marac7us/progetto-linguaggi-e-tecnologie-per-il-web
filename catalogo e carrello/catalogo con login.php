@@ -55,6 +55,7 @@ if(empty($_SESSION["shopping_cart"])) {
     href="../Immagini sito/trialbio finito.png"
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Catalogo</title>
 <style>
 .details {
             border: 1.5px solid grey;

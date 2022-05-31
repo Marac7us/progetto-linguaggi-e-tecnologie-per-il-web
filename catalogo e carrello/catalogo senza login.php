@@ -13,8 +13,8 @@ include('db.php');?>
     href="../Immagini sito/trialbio finito.png"
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>Catalogo</title>
 <style>
-
 .details {
             border: 1.5px solid grey;
             color: #d6bb36;
