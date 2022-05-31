@@ -108,25 +108,25 @@ if(empty($_SESSION["shopping_cart"])) {
   vertical-align: middle;}
 
 
-[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+[class*="col-"] {
   float: left;
   padding: 15px;
-}/*Se COMMENTO QUESTO CSS LA PAGINA FUNZIONA IN MODO STRANO*/
+}
 
 html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
 .row.content {height: 1500px}
     
-    /* Set gray background color and 100% height */
+   
     .sidenav {
       background-color: #f1f1f1;
       height: 100%;
     }
     
-    /* On small screens, set height to 'auto' for sidenav and grid */
+   
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
@@ -230,7 +230,7 @@ html {
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="../catalogo e carrello/logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>
@@ -249,11 +249,7 @@ html {
             </form>
           </ul><br>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Cerca prodotto...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
+              
             </span>
           </div>
         </div>
@@ -299,7 +295,7 @@ html {
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
                             <p class='card-text'>quantità: ".$row['quantita']."</p>
-                            <button href='#' type='submit' class='btn cart px-auto buy' value='buy'>ADD TO CART</button>
+                            <button href='#' type='submit' class='btn cart px-auto buy' value='buy'"?><?php if ($row['quantita'] == 0){ ?> <?php echo "disabled";   } ?><?php echo ">ADD TO CART</button>
                             </form>
                            </div>
                         </div>
@@ -312,6 +308,7 @@ html {
              
           }?>
   </div>
+  
   <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

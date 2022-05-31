@@ -196,11 +196,7 @@ html {
             </form>
           </ul><br>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Cerca prodotto...">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
             </span>
           </div>
         </div>
@@ -255,7 +251,7 @@ html {
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
                             <p class='card-text'>quantità: ".$row['quantita']."</p>
-                            <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn'>ADD TO CART</button>
+                            <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn' value='buy'"?><?php if ($row['quantita'] == 0){ ?> <?php echo "disabled";   } ?><?php echo ">ADD TO CART</button>
                             </form>
                            </div>
                         </div>
@@ -267,6 +263,7 @@ html {
             
              
           }?>
+  
   </div>
   <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
