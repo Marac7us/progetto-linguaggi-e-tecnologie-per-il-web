@@ -9,6 +9,7 @@ $password2 = $_POST['password2'];
 $cap = $_POST['cap'];
 $indirizzo = $_POST['indirizzo'];
 $civico = $_POST['civico'];
+$sicurezza = $_POST['sicurezza'];
 if($password != $password2){
     echo "password non coincidono";
     echo "<a href=registrazione.html> Clicca qui per riprovare </a>";
@@ -33,7 +34,7 @@ if($password != $password2){
         echo('<a href=registrazione.html> Clicca qui per riprovare </a>');
     } else {
         $password = md5($password);
-        $query= "INSERT INTO utenti (email, password, nome, cognome, username, cap, indirizzo, civico) VALUES ('$email','$password', '$nome','$cognome', '$username','$cap','$indirizzo','$civico')";
+        $query= "INSERT INTO utenti (email, password, nome, cognome, username, cap, indirizzo, civico, sicurezza) VALUES ('$email','$password', '$nome','$cognome', '$username','$cap','$indirizzo','$civico', '$sicurezza')";
         $mysqli->query($query) or die( "Unable to query");
         echo "registrazione effettuata";
         echo "<hr><a href='../login/accedi.html'> <button> vai alla pagina di accesso </button></a>";
