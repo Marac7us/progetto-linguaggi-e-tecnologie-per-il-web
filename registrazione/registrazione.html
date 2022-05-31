@@ -23,15 +23,24 @@
           </a>
           <input class="form-control"  methode= "post" name="nome" type="text" id="nome" placeholder="Nome" required autofocus ></input>
           <input class="form-control"  methode= "post" name="cognome" type="text" id="cognome" placeholder="Cognome" required autofocus ></input>
-          <input class="form-control"  methode= "post" name="username" type="text" id="username" placeholder="username" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="username" type="text" id="username" placeholder="Username" required autofocus ></input>
           <input class="form-control"  methode= "post" name="email" type="email" id="email" placeholder="Indirizzo Email" required autofocus ></input>
           <input class="form-control"  methode= "post" name="password" type="password" id="password" placeholder="Password" required autofocus></input>
-          <input class="form-control"  methode= "post"name="password2" type="password" id="password2" placeholder="Ripeti password" required autofocus></input>
+          <input class="form-control"  methode= "post" name="password2" type="password" id="password2" placeholder="Ripeti password" required autofocus></input>
           <input class="form-control"  methode= "post" name="indirizzo" type="text" id="indirizzo" placeholder="Indirizzo" required autofocus ></input>
           <input class="form-control"  methode= "post" name="civico" type="text" id="civico" placeholder="civico" required autofocus ></input>
-          <input class="form-control"  methode= "post" class= "m-3" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
+          <input class="form-control"  methode= "post" name="cap" type="text" id="cap" placeholder="cap" required autofocus ></input>
+          <select name="domanda" id="domanda"  class="form-control" placeholder="domanda di sicurezza">
+            <option value = "null"></option>
+            <option value="professore">Qual'è il nome del tuo professore di matematica alle medie? </option>
+            <option value="mamma">Qual'è il cognome di tua mamma da nubile?  </option>
+            <option value="animale">Qual'è il nome del tuo primo animale domestico?  </option>
+            <option value="citta">Qual'è la città dove si sono conosciuti i tuoi genitori?  </option>
+          </select>
+          <input class="form-control"  methode= "post" class= "m-3" name="sicurezza" type="text" id="sicurezza" placeholder="Risposta" required autofocus ></input>
           <button class="mb-2" type="submit"  name="register">Registrati</button>
-          <button class="mb-2" type="reset" name="reset">Cancella</button>
+          <button class="mb-2" type="reset" name="reset">Cancella</button><hr>
+          <a href="../login/accedi.html" style="color: rgb(0, 0, 0);">Sei già registrato?.</a>
           <footer
       class="bg-success text-black text-center"
       style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
