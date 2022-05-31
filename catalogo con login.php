@@ -116,16 +116,6 @@ html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-
-}
-
-
-
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {height: 1500px}
     
