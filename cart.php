@@ -83,7 +83,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 }
 ?>
 
-<div class="cart">
+<div class="cart container-fluid">
 <?php
 if(isset($_SESSION["shopping_cart"])){
     $total_prezzo = 0;

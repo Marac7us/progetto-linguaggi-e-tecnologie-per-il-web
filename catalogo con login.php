@@ -55,19 +55,16 @@ if(empty($_SESSION["shopping_cart"])) {
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-body{
-    background:#E0E0E0;
-}
 .details {
             border: 1.5px solid grey;
-            color: #212121;
+            color: #d6bb36;
             width: 100%;
             height: auto;
             box-shadow: 0px 0px 10px #212121;
         }
 
         .cart {
-            background-color: #212121;
+            background-color: #d6bb36;
             color: white;
             margin-top: 10px;
             font-size: 12px;
@@ -75,7 +72,7 @@ body{
             width: 100%;
             height: 39px;
             padding-top: 9px;
-            box-shadow: 0px 5px 10px  #212121;
+            box-shadow: 0px 5px 10px  #d6d5d2;
         }
 
         .card {
@@ -147,6 +144,10 @@ html {
       .column{
         width:100%;
         height: 50%;
+      }
+      .cfluid2{
+        width: 350px;
+        height: 350px;
       }
     }
   .cvp{
@@ -296,8 +297,8 @@ html {
            while($row= mysqli_fetch_array($retval)){
             
             if($count%4==0) echo "<div class='row'>";
-            echo "<div class='column col-sm'>";
-             echo"  <div class='container-fluid'>
+            echo "<div class='col-md-3'>";
+             echo"  <div class='container-fluid cfluid2'>
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
                         <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
