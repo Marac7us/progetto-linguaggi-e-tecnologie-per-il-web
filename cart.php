@@ -83,7 +83,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 }
 ?>
 
-<div class="cart">
+<div class="cart container-fluid">
 <?php
 if(isset($_SESSION["shopping_cart"])){
     $total_prezzo = 0;
@@ -122,6 +122,7 @@ echo "<td><img src=' data:image/jpg;base64,".base64_encode($prodotto['immagine']
 </td>
 <td><?php echo "$".$prodotto["prezzo"]; ?></td>
 <td><?php echo "$".$prodotto["prezzo"]*$prodotto["quantita"]; ?></td>
+<td><?php echo "quantità rimanente:" .$prodotto["qt"];?></td>
 </tr>
 <?php
 $total_prezzo += ($prodotto["prezzo"]*$prodotto["quantita"]);

@@ -40,9 +40,11 @@ if($password != $password2){
 }
 
 $mysqli->close();
-
-
 }
+
+
+
+
 
 
    

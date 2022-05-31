@@ -14,19 +14,17 @@ include('db.php');?>
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-body{
-    background:#E0E0E0;
-}
+
 .details {
             border: 1.5px solid grey;
-            color: #212121;
+            color: #d6bb36;
             width: 100%;
             height: auto;
             box-shadow: 0px 0px 10px #212121;
         }
 
         .cart {
-            background-color: #212121;
+            background-color: #d6bb36;
             color: white;
             margin-top: 10px;
             font-size: 12px;
@@ -34,7 +32,7 @@ body{
             width: 100%;
             height: 39px;
             padding-top: 9px;
-            box-shadow: 0px 5px 10px  #212121;
+            box-shadow: 0px 5px 10px  #d6d5d2;
         }
 
         .card {
@@ -78,16 +76,6 @@ html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-
-}
-
-
-
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {height: 1500px}
     
@@ -106,6 +94,10 @@ html {
       .column{
         width:100%;
         height: 50%;
+      }
+      .cfluid2{
+        width: 350px;
+        height: 350px;
       }
     }
   .cvp{
@@ -179,13 +171,13 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="home\home.php">Home</a></li>
-        <li class="active"><a href="catalogo.php">Catalogo</a></li>
-        <li><a href="dove siamo\dovesiamo.html">Dove trovarci</a></li>
+        <li><a href="../home/home.html">Home</a></li>
+        <li class="active"><a href="../catalogo.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo.html">Dove trovarci</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="registrazione\registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
-        <li><a href="login\accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
+        <li><a href="../registrazione/registrazione.html"><span class="glyphicon glyphicon-user"></span> Registrati</a></li>
+        <li><a href="../login/accedi.html"><span class="glyphicon glyphicon-log-in"></span> Accedi</a></li>
       </ul>
     </div>
   </div>
@@ -221,7 +213,7 @@ html {
             <?php $status='';
             if(isset($_POST['addbtn'])){
             $status = "<div class='box alert alert-danger alert-dismissible fade in' style='color:red;'>
-		                       devi essere loggato per aggiungere un prodotto!</div>";
+		                       Per aggiungere un prodotto devi prima effettuare il login!</div>";
           }
             echo $status; ?>
           </div>
@@ -252,8 +244,8 @@ html {
            while($row= mysqli_fetch_array($retval)){
             
             if($count%4==0) echo "<div class='row'>";
-            echo "<div class='column col-sm'>";
-             echo"  <div class='container-fluid'>
+            echo "<div class='col-md-3'>";
+             echo"  <div class='container-fluid cfluid2'>
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
                         <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
@@ -262,6 +254,7 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
+                            <p class='card-text'>quantità: ".$row['quantita']."</p>
                             <button href='#' type='submit' class='btn cart px-auto buy' name='addbtn'>ADD TO CART</button>
                             </form>
                            </div>

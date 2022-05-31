@@ -11,6 +11,7 @@ $nome = $row['nome'];
 $idprodotto = $row['idprodotto'];
 $prezzo = $row['prezzo'];
 $immagine = $row['immmagine'];
+$qt=$row['quantita'];
 
 $cartArray = array(
 	$idprodotto=>array(
@@ -18,6 +19,7 @@ $cartArray = array(
 	'idprodotto'=>$idprodotto,
 	'prezzo'=>$prezzo,
 	'quantita'=>1,
+  'qt'=>$qt,
 	'immagine'=>$immagine)
 );
 if(empty($_SESSION["shopping_cart"])) {
@@ -37,6 +39,7 @@ if(empty($_SESSION["shopping_cart"])) {
 	console_log($_SESSION);
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -53,19 +56,16 @@ if(empty($_SESSION["shopping_cart"])) {
   />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-body{
-    background:#E0E0E0;
-}
 .details {
             border: 1.5px solid grey;
-            color: #212121;
+            color: #d6bb36;
             width: 100%;
             height: auto;
             box-shadow: 0px 0px 10px #212121;
         }
 
         .cart {
-            background-color: #212121;
+            background-color: #d6bb36;
             color: white;
             margin-top: 10px;
             font-size: 12px;
@@ -73,7 +73,7 @@ body{
             width: 100%;
             height: 39px;
             padding-top: 9px;
-            box-shadow: 0px 5px 10px  #212121;
+            box-shadow: 0px 5px 10px  #d6d5d2;
         }
 
         .card {
@@ -117,16 +117,6 @@ html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-
-}
-
-
-
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {height: 1500px}
     
@@ -145,6 +135,10 @@ html {
       .column{
         width:100%;
         height: 50%;
+      }
+      .cfluid2{
+        width: 350px;
+        height: 350px;
       }
     }
   .cvp{
@@ -209,7 +203,7 @@ html {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="../home/home con login.php">
+      <a href="../home/home con login.html">
           <img
             class="d-inline-block align-text-top rounded navbar-brand"
             src="../Immagini sito/trialbio finito.png"
@@ -221,9 +215,9 @@ html {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../home/home con login.php">Home</a></li>
-        <li><a href="../catalogo con login.php">Catalogo</a></li>
-        <li><a href="../dove siamo/dovesiamo con login.php">Dove trovarci</a></li>
+        <li><a href="../home/home con login.html">Home</a></li>
+        <li class="active"><a href="../catalogo con login.php">Catalogo</a></li>
+        <li><a href="../dove siamo/dovesiamo con login.html">Dove trovarci</a></li>
         <li><?php
           if(!empty($_SESSION["shopping_cart"])) {
           $cart_count = count(array_keys($_SESSION["shopping_cart"]));
@@ -236,7 +230,7 @@ html {
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../home/home.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
       </ul>
     </div>
   </div>
@@ -248,10 +242,10 @@ html {
           <h4>Menu di Ricerca</h4>
           <ul class="nav nav-pills nav-stacked nav2">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="filtri">
-             <li class="active"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
-             <li><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
-             <li><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
-             <li><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="tutti" name="tuttibtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cucina" name="cucinabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="cura personale" name="curapersabtn"></li>
+             <li class="attf"><input type="submit" class ="filter" value="makeup" name="makeupbtn"></li>
             </form>
           </ul><br>
           <div class="input-group">
@@ -294,8 +288,8 @@ html {
            while($row= mysqli_fetch_array($retval)){
             
             if($count%4==0) echo "<div class='row'>";
-            echo "<div class='column col-sm'>";
-             echo"  <div class='container-fluid'>
+            echo "<div class='col-md-3'>";
+             echo"  <div class='container-fluid cfluid2'>
                       <div class='card mx-auto col-md-3 col-10 mt-5'>
                         <img class='mx-auto img-thumbnail catimg' src='data:image/jpg;base64,".base64_encode($row['immmagine'])."' width='auto' height='auto'/>
                         <div class='card-body text-center mx-auto'>
@@ -304,6 +298,7 @@ html {
                             <input type='hidden' name='idprodotto' value=".$row['idprodotto']." />";
                       echo "<h5 class='card-title font-weight-bold cont'>".$row['nome']."</h5>
                             <p class='card-text'>".$row['prezzo']."&euro;"."</p>
+                            <p class='card-text'>quantità: ".$row['quantita']."</p>
                             <button href='#' type='submit' class='btn cart px-auto buy' value='buy'>ADD TO CART</button>
                             </form>
                            </div>
