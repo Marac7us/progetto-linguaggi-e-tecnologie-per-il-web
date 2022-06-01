@@ -269,9 +269,9 @@ html {
           <?php
           
           $dbhost ="localhost:3306";
-          $dbuser = "user";
-          $dbpass= "admin";
-          $db = "trialbio";
+          $dbuser = "root";
+          $dbpass= "0000";
+          $db = "login";
           
           
           $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
