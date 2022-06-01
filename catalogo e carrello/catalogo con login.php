@@ -217,7 +217,7 @@ html {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="../home/home con login.html">Home</a></li>
-        <li class="active"><a href="../catalogo con login.php">Catalogo</a></li>
+        <li class="active"><a href="../catalogo e carrello/catalogo con login.php">Catalogo</a></li>
         <li><a href="../dove siamo/dovesiamo con login.html">Dove trovarci</a></li>
         <li><?php
           if(!empty($_SESSION["shopping_cart"])) {

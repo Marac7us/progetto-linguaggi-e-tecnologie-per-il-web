@@ -172,7 +172,7 @@ html {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="../home/home.html">Home</a></li>
-        <li class="active"><a href="../catalogo.php">Catalogo</a></li>
+        <li class="active"><a href="../catalogo e carrello/catalogo senza login.php">Catalogo</a></li>
         <li><a href="../dove siamo/dovesiamo.html">Dove trovarci</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
