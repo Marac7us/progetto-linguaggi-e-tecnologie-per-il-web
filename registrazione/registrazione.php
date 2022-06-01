@@ -32,7 +32,9 @@ if($password != $password2){
         $erroreMailUsata2 = "1";
         echo('Esiste già una registrazione con questo username ');
         echo('<a href=registrazione.html> Clicca qui per riprovare </a>');
-    } else {
+    
+    }
+    if($num2=0 and $num=0) {
         $password = md5($password);
         $query= "INSERT INTO utenti (email, password, nome, cognome, username, cap, indirizzo, civico, sicurezza) VALUES ('$email','$password', '$nome','$cognome', '$username','$cap','$indirizzo','$civico', '$sicurezza')";
         $mysqli->query($query) or die( "Unable to query");

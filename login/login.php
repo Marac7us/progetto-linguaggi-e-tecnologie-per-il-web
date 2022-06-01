@@ -15,6 +15,7 @@ $logdb = mysqli_fetch_row($result);
 if ($num < 1) {
 $erroreNonEsiste = "1";
 echo 'email o password non validi'; 
+echo "<hr><a href='../home/home.html'> <button> vai alla home </button></a>";
 } else {
     $username = "SELECT username FROM utenti WHERE email = '$email' AND password = '$password'";
     $result2 = $mysqli->query($username) or die( "Unable to query");
@@ -23,7 +24,8 @@ echo 'email o password non validi';
     $numero =current($logdb);
     $mysqli->close();
     echo "Benvenuto  ", $numero;
+    echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
 }
-echo "<hr><a href='../home/home con login.html'> <button> vai alla home </button></a>";
+
 
 
