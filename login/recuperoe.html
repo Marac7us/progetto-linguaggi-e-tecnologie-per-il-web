@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css"/>
         <link rel="stylesheet" href="style.css"/>
         <script src="../js/bootstrap.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("button").click(function(){
+              $("#div1").fadeIn();
+              $("#div2").fadeIn("slow");
+              $("#div3").fadeIn(3000);
+            });
+          });
+          </script>
 
 
 
@@ -67,6 +76,13 @@
           <button class="mb-2" type="submit" name="recupero">Invia</button>
           <button class="mb-2" type="reset" name="reset">Cancella</button><hr>
           <a href="../registrazione/registrazione.html" style="color: rgb(1, 255, 44);">Sei nuovo su Trialbio? Registrati!</a><hr>
+          
+          <button>Click to fade in boxes</button><br><br>
+
+          <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+          <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+          <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
           <footer
       class="bg-success text-black text-center"
       style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
