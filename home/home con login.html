@@ -10,7 +10,6 @@
     type="image/x-icon"
     href="../Immagini sito/trialbio finito.png"
   />
-  <link rel="stylesheet" href="nav.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -26,13 +25,13 @@
   height: 520px;
 }
 
-.row::after { /* crea una riga e un area per delimitare un banner*/ 
+.row::after { 
   content: ""; 
   clear: both;
   display: table;
 }
 
-[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+[class*="col-"] {
   float: left;
   padding: 15px;
 }
@@ -41,14 +40,14 @@
   font-family: "Lucida Sans", sans-serif;
 }
 
-/* Slideshow container */
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* The dots/bullets/indicators */
+
 .dot {
   height: 15px;
   width: 15px;
@@ -61,7 +60,7 @@
 .attiva {
   background-color: #717171;
 }
-/* Fading animation */
+
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -72,18 +71,18 @@
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
+
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
 
-/* For mobile phones: */
+
 [class*="col-"] {
   width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-  /* For tablets: */
+  
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
   .col-s-3 {width: 25%;}
@@ -102,7 +101,7 @@
           height: 100%;}
 }
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
+  
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
@@ -285,7 +284,7 @@ style="position: relative; bottom: 0; right: 0; left: 0; margin-top: 40px;"
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " attiva";
-    setTimeout(showSlides, 1500); // Change image every 2 seconds
+    setTimeout(showSlides, 1500); 
   }
   </script>
   <script src="../js/bootstrap.bundle.min.js"></script>
