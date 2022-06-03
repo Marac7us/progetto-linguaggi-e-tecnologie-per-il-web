@@ -67,25 +67,25 @@ include('db.php');?>
   vertical-align: middle;}
 
 
-[class*="col-"] {/* elementi di classe col- inseriti da sinistra verso destra con padding 15 pixel*/
+[class*="col-"] {
   float: left;
   padding: 15px;
-}/*Se COMMENTO QUESTO CSS LA PAGINA FUNZIONA IN MODO STRANO*/
+}
 
 html {
   font-family: "Lucida Sans", sans-serif;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
 .row.content {height: 1500px}
     
-    /* Set gray background color and 100% height */
+    
     .sidenav {
       background-color: #f1f1f1;
       height: 100%;
     }
     
-    /* On small screens, set height to 'auto' for sidenav and grid */
+    
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;

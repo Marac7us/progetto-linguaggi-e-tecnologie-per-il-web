@@ -34,7 +34,7 @@ if($password != $password2){
         echo('<a href=registrazione.html> Clicca qui per riprovare </a>');
     
     }
-    if($num2=0 and $num=0) {
+    if($num==0 and $num2==0) {
         $password = md5($password);
         $query= "INSERT INTO utenti (email, password, nome, cognome, username, cap, indirizzo, civico, sicurezza) VALUES ('$email','$password', '$nome','$cognome', '$username','$cap','$indirizzo','$civico', '$sicurezza')";
         $mysqli->query($query) or die( "Unable to query");

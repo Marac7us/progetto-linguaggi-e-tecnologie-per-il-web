@@ -1,10 +1,10 @@
 .Photo_container {
-  /*min-height: 100%;*/
+  
   display: flex;
   padding-top: 10px;
   flex-wrap: wrap;
   flex-direction: row;
-  /*justify-content: center;*/
+  
 }
   
 .flex-container {
